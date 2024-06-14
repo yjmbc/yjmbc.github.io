@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on YJMBC Blog</title>
+    <link>http://localhost:1313/tags/blog/</link>
+    <description>Recent content in Blog on YJMBC Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a Hugo Blog</title>
+      <link>http://localhost:1313/work/first-post/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/work/first-post/</guid>
+      <description>安装 https://gohugo.io/installation/windows/ 直接用 scoop 安装最方便&#xA;go 安装msi文件运行就可以了&#xA;新建 hugo new site [网站名字]&#xA;挑选一个主题 https://themes.gohugo.io/&#xA;git submodule add [主题的github地址]&#xA;在 hugo.toml 里面定义主题 theme = &#39;主题名字&#39;&#xA;hugo server 启动&#xA;hugo server -D 预览&#xA;新建文章 hugo new content posts/my-first-post.md&#xA;hugo 打包文件 会放到 public 目录下面&#xA;github page 创建一个仓库 命名 username.github.io 然后把远程仓库拉到本地 git clone 远程仓库 把上面 public 目录下的所有文件复制过来 提交 推送远程仓库 访问 username.github.io </description>
+    </item>
+  </channel>
+</rss>
