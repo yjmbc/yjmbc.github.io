@@ -13,7 +13,7 @@
       <link>https://yjmbc.github.io/work/hugo-start/</link>
       <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://yjmbc.github.io/work/hugo-start/</guid>
-      <description>安装 https://gohugo.io/installation/windows/直接用 scoop 安装最方便&#xA;go 安装msi文件运行就可以了 新建 hugo new site [网站名字]&#xA;挑选一个主题 https://themes.gohugo.io/&#xA;git submodule add [主题的github地址]&#xA;在 hugo.toml 里面定义主题 theme = &#39;主题名字&#39;&#xA;hugo server 启动&#xA;hugo server -D 预览&#xA;新建文章 hugo new content posts/my-first-post.md&#xA;hugo 打包文件 会放到 public 目录下面 github page 创建一个仓库 命名 username.github.io 然后把远程仓库拉到本地 git clone 远程仓库 把上面 public 目录下的所有文件复制过来 提交 推送远程仓库 访问 username.github.io hugo.toml 文件 [Params] # 指示网站是否为自托管 selfHosted = true # 设置日期格式为&amp;#34;2006-01-02&amp;#34;，即年-月-日 dateFormat = &amp;#34;2006-01-02&amp;#34; # 是否显示文章的预估阅读时间 readingTime = true # 是否在文章末尾显示字数统计 wordCount = true # 是否使用highlight.</description>
+      <description>安装 https://gohugo.io/installation/windows/直接用 scoop 安装最方便&#xA;go 安装msi文件运行就可以了 新建 hugo new site [网站名字]&#xA;挑选一个主题 https://themes.gohugo.io/&#xA;git submodule add [主题的github地址]&#xA;在 hugo.toml 里面定义主题 theme = &#39;主题名字&#39;&#xA;hugo server 启动&#xA;hugo server -D 预览&#xA;新建文章 hugo new content posts/my-first-post.md&#xA;hugo 打包文件 会放到 public 目录下面 github page 创建一个仓库 命名 username.github.io 然后把远程仓库拉到本地 git clone 远程仓库 把上面 public 目录下的所有文件复制过来 提交 推送远程仓库 访问 username.github.io hugo.toml 文件 # 要注意配置文件的 url 要更改成github page的路径！！！ baseURL = &amp;#39;https://yjmbc.github.io/&amp;#39; [Params] # 指示网站是否为自托管 selfHosted = true # 设置日期格式为&amp;#34;2006-01-02&amp;#34;，即年-月-日 dateFormat = &amp;#34;2006-01-02&amp;#34; # 是否显示文章的预估阅读时间 readingTime = true # 是否在文章末尾显示字数统计 wordCount = true # 是否使用highlight.</description>
     </item>
   </channel>
 </rss>
