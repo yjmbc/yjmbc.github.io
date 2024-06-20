@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>2024 - YJMBC Blog</title>
+<title>Markdown 语法学习 - YJMBC Blog</title>
+<meta name="description" content="markdown 语法学习">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,9 +29,59 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/learn\/markdown\/",
+          "name": "Markdown 语法学习"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Markdown 语法学习",
+  "description" : "markdown 语法学习",
+  "inLanguage" : "zh-cn",
+  "wordCount":  149 ,
+  "datePublished" : "2024-06-20T00:00:00",
+  "dateModified" : "2024-06-20T00:00:00",
+  "image" : "https:\/\/yjmbc.github.io\/",
+  "keywords" : [ "学习杂记, 2024" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/learn\/markdown\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yjmbc.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yjmbc.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="2024" />
-<meta property="og:url" content="https://yjmbc.github.io/tags/2024/" />
+<meta property="og:title" content="Markdown 语法学习" />
+<meta property="og:description" content="markdown 语法学习">
+<meta property="og:image" content="https://yjmbc.github.io/img/learn/books.jpg" />
+<meta property="og:url" content="https://yjmbc.github.io/learn/markdown/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YJMBC Blog" />
 <link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
@@ -243,10 +294,15 @@
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             
 
-            <div class="tags-heading">
+            <div class="learn-heading">
               
-              <h1 class="fw-semibold display-5 lh-1 mb-3">
-                #2024
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Markdown 语法学习
+                
               </h1>
               
               
@@ -254,12 +310,7 @@
               
 
               
-
               
-              
-
-              
-
               
             </div>
           </div>
@@ -276,67 +327,179 @@
     
 <div class="container" role="main">
   <div class="row">
-    <div class="col-md-12">
-      
-      <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
         
           
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="https://yjmbc.github.io/learn/markdown/">
-        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
-            <div class="card-body">
-                <h3 class="fw-bold post-title">Markdown 语法学习</h3>
-                
+            <img src="/img/learn/books.jpg" alt="/img/learn/books.jpg" class="card-img-bottom rounded img-fluid lazyload">
+          
+        
 
-                <p class="post-meta">
-                    <span class="post-meta text-muted">
+
+        
+      </div>
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <h1 id="标题语法">标题语法</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># h1 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## h2 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>以此类推 到6  记得有空格
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>内容
+</span></span><span style="display:flex;"><span>======    
+</span></span><span style="display:flex;"><span>表示h1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>内容
+</span></span><span style="display:flex;"><span>------
+</span></span><span style="display:flex;"><span>表示h2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> = / - 数量任意
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ### 内容 {#id的名字}      =》 &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id的名字&#34;</span>&gt;内容&lt;/<span style="color:#f92672">h3</span>&gt;  好像有的不支持
+</span></span></code></pre></div><h1 id="段落">段落</h1>
+<p>空行空出来就分段了</p>
+<h1 id="换行">换行</h1>
+<p>结尾空格</p>
+<h1 id="字体样式">字体样式</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**加粗内容**
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__加粗内容__</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>*斜体*
+</span></span><span style="display:flex;"><span><span style="font-style:italic">_斜体_</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>***粗体且斜体***
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">___粗体且斜体___</span>
+</span></span></code></pre></div><h1 id="引用">引用</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&gt;引用内容
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt;放在一段里面的引用内容
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt;&gt;引用里面引用
+</span></span></span></code></pre></div><h1 id="列表">列表</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>有序列表
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 内容
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 内容
+</span></span><span style="display:flex;"><span>数字+. 前面数字是啥无所谓，但一定要是1开始
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>无序列表
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 列表
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> 列表
+</span></span><span style="display:flex;"><span>+ 列表
+</span></span><span style="display:flex;"><span>  + 缩进列表
+</span></span><span style="display:flex;"><span>三个符号都可以
+</span></span></code></pre></div><h1 id="代码">代码</h1>
+<p><code>代码</code></p>
+<h1 id="分隔线">分隔线</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>内容
+</span></span><span style="display:flex;"><span><span style="font-style:italic">**</span>************
+</span></span><span style="display:flex;"><span>--------------
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">______________</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> - _ 都可以作为分隔符
+</span></span></code></pre></div><h1 id="a标签语法">a标签语法</h1>
+<p><code>[a标签显示内容](链接地址 &quot;title&quot;)</code><!-- raw HTML omitted -->e.g. <code>[百度](https://www.baidu.com &quot;百度&quot;)</code></p>
+<h1 id="图片">图片</h1>
+<p><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
+<h1 id="转义字符">转义字符\</h1>
+<h1 id="支持html标签插入">支持html标签插入</h1>
+<h1 id="表格">表格</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Title1		| Title2   |
+</span></span><span style="display:flex;"><span>| --------- |	-------- |
+</span></span><span style="display:flex;"><span>| content1  | content2 |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 不一定要对齐
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>| Syntax      | Description | Test Text     |
+</span></span><span style="display:flex;"><span>| :---        |    :----:   |          ---: |
+</span></span><span style="display:flex;"><span>| 左对齐      | 剧中     | 右对齐   |
+</span></span></code></pre></div><h1 id="注脚">注脚</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[^数字或者单词] 不能包含空格和制表符
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Here&#39;s a simple footnote,[^1] and here&#39;s a longer one.[^bignote]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[^1]: 注脚1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[^bignote]: 注脚2
+</span></span></code></pre></div><h1 id="删除线">删除线</h1>
+<p><del>删除线</del></p>
+<h1 id="任务列表">任务列表</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">- [x]</span> x代表这一项完成了
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> 空白代表还没有
+</span></span></code></pre></div><h1 id="自动网址链接">自动网址链接</h1>
+<p>链接如果希望他仅仅做展示，不希望点击后跳走，可以使用反引号<!-- raw HTML omitted --><code>http://xxxxx.com</code></p>
+
+      </article>
+    </div>
+  </div>
+
   
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr class="m-0"/>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
+        
+        <a href="https://yjmbc.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/">学习杂记</a>
+        
+        <a href="https://yjmbc.github.io/tags/2024/">2024</a>
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
+
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/learn/electron-communication/"
+            data-toggle="tooltip" data-placement="top" title="Electron 主进程 渲染进程">&larr;
+            前一篇</a>
+        </li>
+        
+
+
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
   
-
-  2024-06-20
-
-  
-
-  
-  &nbsp;|&nbsp; <i class="bi bi-clock"></i>&nbsp;1&nbsp;分钟
-  
-
-  
-  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;149&nbsp;个字
-  
-
-  
-</span>
-
-                </p>
-                
-
-                <div class="post-entry">
-                    
-                    markdown 语法学习
-
-                    
-                </div>
-
-                <div class="read-more-section">
-                    
-                    <h6 class="text-muted link-underline">阅读全文 <i class="bi bi-arrow-right"></i></h6>
-                </div>
-            </div>
-
-            
-            <img src="/img/learn/books_hu3eb2e86216065986d804cc2ee46588fb_358519_500x0_resize_q75_box.jpg" alt="/img/learn/books.jpg"
-                class="card-img-bottom img-fluid lazyload">
-            
-
-            
-        </div>
-    </a>
 </div>
 
+<div class="">
+  
+  
+  
+  
+  
 
-        
-          
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mt-3">
+        <h3>阅读全文</h3>
+        <hr />
+      </div>
+
+      
+      
+
+      
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
     <a href="https://yjmbc.github.io/learn/electron-communication/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
@@ -391,8 +554,9 @@
 </div>
 
 
-        
-          
+      
+
+      
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
     <a href="https://yjmbc.github.io/readothers/finance-first/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
@@ -447,8 +611,9 @@
 </div>
 
 
-        
-          
+      
+
+      
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
     <a href="https://yjmbc.github.io/work/hugo-start/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
@@ -503,24 +668,15 @@
 </div>
 
 
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
- <div class="row font-sans">
-   <div class="col-md-12 mt-10">
-      <nav aria-label="Page navigation">
-      <ul class= "pagination justify-content-end">
       
-      </ul>
-      </nav>
     </div>
   </div>
-</div>
+  
+  
 
+  
+
+</div>
 
     
 
@@ -536,7 +692,7 @@
           
           
           <li>
-            <a href="/tags/2024/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="mx-2">
                 <i class="bi bi-rss"></i>
               </span>

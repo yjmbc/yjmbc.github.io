@@ -6,8 +6,15 @@
     <description>Recent content in Learns on YJMBC Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yjmbc.github.io/learn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown 语法学习</title>
+      <link>https://yjmbc.github.io/learn/markdown/</link>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/learn/markdown/</guid>
+      <description>标题语法 # h1 ## h2 以此类推 到6 记得有空格 内容 ====== 表示h1 内容 ------ 表示h2 = / - 数量任意 ### 内容 {#id的名字} =》 &amp;lt;h3 id=&amp;#34;id的名字&amp;#34;&amp;gt;内容&amp;lt;/h3&amp;gt; 好像有的不支持 段落 空行空出来就分段了&#xA;换行 结尾空格&#xA;字体样式 **加粗内容** __加粗内容__ *斜体* _斜体_ ***粗体且斜体*** ___粗体且斜体___ 引用 &amp;gt;引用内容 &amp;gt; &amp;gt;放在一段里面的引用内容 &amp;gt; &amp;gt;&amp;gt;引用里面引用 列表 有序列表 1. 内容 2. 内容 数字+. 前面数字是啥无所谓，但一定要是1开始 无序列表 - 列表 * 列表 + 列表 + 缩进列表 三个符号都可以 代码 代码&#xA;分隔线 内容 ************** -------------- ______________ * - _ 都可以作为分隔符 a标签语法 [a标签显示内容](链接地址 &amp;quot;title&amp;quot;)e.</description>
+    </item>
     <item>
       <title>Electron 主进程 渲染进程</title>
       <link>https://yjmbc.github.io/learn/electron-communication/</link>
