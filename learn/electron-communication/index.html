@@ -59,7 +59,7 @@
   "headline": "Electron 主进程 渲染进程",
   "description" : "Electron 主进程 渲染进程",
   "inLanguage" : "zh-cn",
-  "wordCount":  45 ,
+  "wordCount":  51 ,
   "datePublished" : "2024-06-19T00:00:00",
   "dateModified" : "2024-06-19T00:00:00",
   "image" : "https:\/\/yjmbc.github.io\/",
@@ -80,6 +80,7 @@
 
 <meta property="og:title" content="Electron 主进程 渲染进程" />
 <meta property="og:description" content="Electron 主进程 渲染进程">
+<meta property="og:image" content="https://yjmbc.github.io/img/learn/leaf.jpg" />
 <meta property="og:url" content="https://yjmbc.github.io/learn/electron-communication/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YJMBC Blog" />
@@ -331,6 +332,10 @@
       <div class="card-image card-image-blog p-0">
         
         
+          
+            <img src="/img/learn/leaf.jpg" alt="/img/learn/leaf.jpg" class="card-img-bottom rounded img-fluid lazyload">
+          
+        
 
 
         
@@ -350,11 +355,17 @@
 <h1 id="进程间通信">进程间通信</h1>
 <p><a href="https://www.electronjs.org/zh/docs/latest/tutorial/ipc">https://www.electronjs.org/zh/docs/latest/tutorial/ipc</a></p>
 <h2 id="渲染进程发主进程听单向">渲染进程发，主进程听（单向）</h2>
-<p>preload 里 ipcRenderer.send<!-- raw HTML omitted -->html页面里面，调用window上的api里注册的方法，就是preload里面注册的方法名字<!-- raw HTML omitted -->main.js 里 ipcMain.on监听</p>
+<p>preload 里 ipcRenderer.send <br>
+html页面里面，调用window上的api里注册的方法，就是preload里面注册的方法名字 <br>
+main.js 里 ipcMain.on监听</p>
 <h2 id="渲染进程发主进程听完返回相互通信双向">渲染进程发，主进程听完返回，相互通信（双向）</h2>
-<p>preload里 ipcRenderer.invoke()<!-- raw HTML omitted -->html页面里面，调用上面的方法，同样在window上<!-- raw HTML omitted -->main.js里面ipcMain.handle()</p>
+<p>preload里 ipcRenderer.invoke() <br>
+html页面里面，调用上面的方法，同样在window上  <br>
+main.js里面ipcMain.handle()</p>
 <h2 id="主进程发渲染进程听">主进程发，渲染进程听</h2>
-<p>main.js里面 mainWindow.webContents.send mainWindow就是渲染进程实例<!-- raw HTML omitted -->然后再preload里面进行 ipcRenderer.on听<!-- raw HTML omitted -->最后再页面上 调用preload里面定义的方法，做逻辑处理</p>
+<p>main.js里面 mainWindow.webContents.send mainWindow就是渲染进程实例  <br>
+然后再preload里面进行 ipcRenderer.on听   <br>
+最后再页面上 调用preload里面定义的方法，做逻辑处理</p>
 <p>如果这里想要通信回去，就在页面上调用的方法里面，再调用一个方法发送给主进程</p>
 <h2 id="两个渲染器进程">两个渲染器进程</h2>
 <p>之能拿主进程做中转</p>
