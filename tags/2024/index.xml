@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2024 on YJMBC Blog</title>
+    <link>https://yjmbc.github.io/tags/2024/</link>
+    <description>Recent content in 2024 on YJMBC Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yjmbc.github.io/tags/2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electron 主进程 渲染进程</title>
+      <link>https://yjmbc.github.io/learn/electron-communication/</link>
+      <pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/learn/electron-communication/</guid>
+      <description>electron 实际上是 chromium浏览器环境 + node环境 + 原生api的环境&#xA;但三种环境在electron里不是哪里都可以用的，他把js分成了主进程环境和渲染进程环境 每个 Electron 应用都有一个单一的主进程，作为应用程序的入口点。 主进程在 Node.js 环境中运行，这意味着它具有 require 模块和使用所有 Node.js API 的能力,也拥有访问原生api的能力&#xA;等到渲染进程就不再拥有这个能力了，所以有preload,他在页面加载之前执行，在这里仍然拥有访问node的能力。 语境隔离（Context Isolation）意味着预加载脚本与渲染器的主要运行环境是隔离开来的，以避免泄漏任何具特权的 API 到您的网页内容代码中。就是说preload中挂在window上的内容在渲染进程里访问不到&#xA;那如果要在渲染的页面里面拿到preload里定义的方法，这个时候就可以使用contextBridge 进程间通信 https://www.electronjs.org/zh/docs/latest/tutorial/ipc&#xA;渲染进程发，主进程听（单向） preload 里 ipcRenderer.sendhtml页面里面，调用window上的api里注册的方法，就是preload里面注册的方法名字main.js 里 ipcMain.on监听&#xA;渲染进程发，主进程听完返回，相互通信（双向） preload里 ipcRenderer.invoke()html页面里面，调用上面的方法，同样在window上main.js里面ipcMain.handle()&#xA;主进程发，渲染进程听 main.js里面 mainWindow.webContents.send mainWindow就是渲染进程实例然后再preload里面进行 ipcRenderer.on听最后再页面上 调用preload里面定义的方法，做逻辑处理&#xA;如果这里想要通信回去，就在页面上调用的方法里面，再调用一个方法发送给主进程&#xA;两个渲染器进程 之能拿主进程做中转</description>
+    </item>
+    <item>
+      <title>小狗钱钱-入门第一本</title>
+      <link>https://yjmbc.github.io/readothers/finance-first/</link>
+      <pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/readothers/finance-first/</guid>
+      <description>前提 毕业以后我的工资全部都存在工商银行的卡里，一般默认存进去的钱自动存活期，但是今年五月发现并没有，所以萌生了理财的想法。&#xA;余额宝里目前有一些钱，然后就是把上面工商的钱存了定期，但是利率1.7有点低。理财产品看不懂，想先找一本书来看看，听说小狗钱钱可以入门。&#xA;读书笔记 72定律&#xA;72 除以投资的年收益率的百分比，得出的数字就是这笔钱翻一倍所要的年数&#xA;72公式也可以用来帮助我们计算通货膨胀。它可以告诉我们，在一定通货膨胀率下，我们的钱在多长时间后会贬值一半。&#xA;比如按72除以3%的通货膨胀率计算，得到24，就是说24年以后，你的钱只值现在的一半。&#xA;记录 书里还提到一个观点时金钱不能使人变得幸福，幸福的人得到金钱会变得更加幸福，但是悲惨的人不会因为得到金钱而变得幸福。感觉很有道理，幸福的能力是自己给的，金钱固然能提升人的生活质量但是幸福的能力还是要靠自己来创造。&#xA;书中对基金的概念也有了一个比较清晰易懂的介绍，基金是经理人受限要求购买至少二十种股票，然后把风险平坦，保证最终受益。书中的观点是行业都会迎来低谷期，但只有低谷期不卖出，就不会亏损，然后总会迎来行业回暖。&#xA;书中主角对自己的财产进行了比例划分来进行管理，她将50%作为会下单的鹅，可持续发展，钱生钱。40%作为梦想基金来实现目标，所以在最开始就设立了要实现的目标。10%作为消费。&#xA;我以前总是会把前面这90%搞混在一起，看起来好像没什么区别，但是风险小了，收益也小了。很多时候目标是攒钱，但是10%的界限又会越过，所以一个清晰的比例也有助于我对自己的钱有一个比较清晰的掌控。 我和主角的比例可能不太一样，我目前对理财有了一个大概的基础认知，算是入门了，我还要再学习一下相关知识。</description>
+    </item>
+    <item>
+      <title>hugo 实践记录</title>
+      <link>https://yjmbc.github.io/work/hugo-start/</link>
+      <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/work/hugo-start/</guid>
+      <description>安装 https://gohugo.io/installation/windows/直接用 scoop 安装最方便 go 安装msi文件运行就可以了&#xA;新建 hugo new site [网站名字]&#xA;挑选一个主题 https://themes.gohugo.io/&#xA;git submodule add [主题的github地址]&#xA;在 hugo.toml 里面定义主题 theme = &#39;主题名字&#39;&#xA;hugo server 启动&#xA;hugo server -D 预览&#xA;新建文章 hugo new content posts/my-first-post.md&#xA;hugo 打包文件 会放到 public 目录下面&#xA;github page 创建一个仓库 命名 username.github.io 然后把远程仓库拉到本地 git clone 远程仓库 把上面 public 目录下的所有文件复制过来 提交 推送远程仓库 访问 username.github.io hugo.toml 文件 # 设置默认语言为简体中文 defaultContentLanguage = &amp;#39;zh-cn&amp;#39; # 要注意配置文件的 url 要更改成github page的路径！！！ baseURL = &amp;#39;https://yjmbc.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Electron 主进程 渲染进程 - YJMBC Blog</title>
+<meta name="description" content="Electron 主进程 渲染进程">
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "YJMBC Blog",
+    
+    "url": "https:\/\/yjmbc.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yjmbc.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/learn\/electron-communication\/",
+          "name": "Electron 主进程 渲染进程"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Electron 主进程 渲染进程",
+  "description" : "Electron 主进程 渲染进程",
+  "inLanguage" : "zh-cn",
+  "wordCount":  45 ,
+  "datePublished" : "2024-06-19T00:00:00",
+  "dateModified" : "2024-06-19T00:00:00",
+  "image" : "https:\/\/yjmbc.github.io\/",
+  "keywords" : [ "electron, 2024" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/learn\/electron-communication\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yjmbc.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yjmbc.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Electron 主进程 渲染进程" />
+<meta property="og:description" content="Electron 主进程 渲染进程">
+<meta property="og:url" content="https://yjmbc.github.io/learn/electron-communication/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YJMBC Blog" />
+<link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yjmbc.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yjmbc.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.127.0">
+<link rel="alternate" href="https://yjmbc.github.io/index.xml" type="application/rss+xml" title="YJMBC Blog">
+<script src="https://yjmbc.github.io/js/dark-mode.js"></script><script src="https://yjmbc.github.io/vendor/lunr/lunr.min.js"></script><script src="https://yjmbc.github.io/vendor/lunr/lunr.stemmer.support.js"></script>
+        <script src="https://yjmbc.github.io/vendor/lunr/lunr.zh.js"></script><script src="https://yjmbc.github.io/js/lunr-search.js" data-index="/search.json"></script><link rel="stylesheet" href="/style.min.css">
+
+
+
+
+
+  
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top mw-100">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+
+          <a class="navbar-brand fw-bold" href="https://yjmbc.github.io/">YJMBC Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-baseline">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="首页"
+                  href="/"> 首页</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="学习记录"
+                  href="/learn/"> 学习记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="实践记录"
+                  href="/work/"> 实践记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="阅读生活"
+                  href="/readothers/"> 阅读生活</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="分类记录"
+                  href="/tags/"> 分类记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="随手记"
+                  href="/collections/"> 随手记</a>
+              </li>
+
+              
+              
+
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-moon-stars" role="button"></a>
+              </li>
+
+              
+              <li class="nav-item search-item">
+                <form id="search" class="search" role="search">
+                  <label for="search-input" class="bi bi-search search-icon"></label>
+                  <input type="search" id="search-input" class="search-input">
+                </form>
+              </li>
+              
+            </ul>
+
+            
+            <template id="search-heading" hidden
+                data-results-none=""
+                data-results-one=""
+                data-results-many=""
+            >
+              <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+                  <h1 id="search-title" class="search-title"></h1>
+                </div>
+              </div>
+            </template>
+
+            <template id="search-result" hidden>
+              <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+                  <article class="content post">
+                    <h2><a class="summary-title-link"></a></h2>
+                    <div class="post-entry"></div>
+                    <div class="read-more-section">
+                      <h6 class="text-muted link-underline">
+                        <a class="read-more-link">
+                          阅读全文
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </template>
+            
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="learn-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Electron 主进程 渲染进程
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        
+    </div>
+  </div>
+</header>
+
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        
+
+
+        
+      </div>
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>electron 实际上是 chromium浏览器环境 + node环境 + 原生api的环境<br>
+但三种环境在electron里不是哪里都可以用的，他把js分成了主进程环境和渲染进程环境 <br>
+<img src="/images/electron.png" alt="image.png"></p>
+<p>每个 Electron 应用都有一个单一的主进程，作为应用程序的入口点。 主进程在 Node.js 环境中运行，这意味着它具有 require 模块和使用所有 Node.js API 的能力,也拥有访问原生api的能力</p>
+<p>等到渲染进程就不再拥有这个能力了，所以有preload,他在页面加载之前执行，在这里仍然拥有访问node的能力。 <br>
+语境隔离（Context Isolation）意味着预加载脚本与渲染器的主要运行环境是隔离开来的，以避免泄漏任何具特权的 API 到您的网页内容代码中。就是说preload中挂在window上的内容在渲染进程里访问不到</p>
+<p>那如果要在渲染的页面里面拿到preload里定义的方法，这个时候就可以使用contextBridge  <br>
+<img src="/images/isolation.png" alt="image.png"></p>
+<h1 id="进程间通信">进程间通信</h1>
+<p><a href="https://www.electronjs.org/zh/docs/latest/tutorial/ipc">https://www.electronjs.org/zh/docs/latest/tutorial/ipc</a></p>
+<h2 id="渲染进程发主进程听单向">渲染进程发，主进程听（单向）</h2>
+<p>preload 里 ipcRenderer.send<!-- raw HTML omitted -->html页面里面，调用window上的api里注册的方法，就是preload里面注册的方法名字<!-- raw HTML omitted -->main.js 里 ipcMain.on监听</p>
+<h2 id="渲染进程发主进程听完返回相互通信双向">渲染进程发，主进程听完返回，相互通信（双向）</h2>
+<p>preload里 ipcRenderer.invoke()<!-- raw HTML omitted -->html页面里面，调用上面的方法，同样在window上<!-- raw HTML omitted -->main.js里面ipcMain.handle()</p>
+<h2 id="主进程发渲染进程听">主进程发，渲染进程听</h2>
+<p>main.js里面 mainWindow.webContents.send mainWindow就是渲染进程实例<!-- raw HTML omitted -->然后再preload里面进行 ipcRenderer.on听<!-- raw HTML omitted -->最后再页面上 调用preload里面定义的方法，做逻辑处理</p>
+<p>如果这里想要通信回去，就在页面上调用的方法里面，再调用一个方法发送给主进程</p>
+<h2 id="两个渲染器进程">两个渲染器进程</h2>
+<p>之能拿主进程做中转</p>
+
+      </article>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr class="m-0"/>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
+        
+        <a href="https://yjmbc.github.io/tags/electron/">electron</a>
+        
+        <a href="https://yjmbc.github.io/tags/2024/">2024</a>
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+
+
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
+  
+</div>
+
+<div class="">
+  
+  
+  
+  
+  
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mt-3">
+        <h3>阅读全文</h3>
+        <hr />
+      </div>
+
+      
+      
+
+      
+<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <a href="https://yjmbc.github.io/readothers/finance-first/">
+        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
+            <div class="card-body">
+                <h3 class="fw-bold post-title">小狗钱钱-入门第一本</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta text-muted">
+  
+  
+
+  2024-06-19
+
+  
+
+  
+  &nbsp;|&nbsp; <i class="bi bi-clock"></i>&nbsp;1&nbsp;分钟
+  
+
+  
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;15&nbsp;个字
+  
+
+  
+</span>
+
+                </p>
+                
+
+                <div class="post-entry">
+                    
+                    小狗钱钱-理财入门第一本
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    
+                    <h6 class="text-muted link-underline">阅读全文 <i class="bi bi-arrow-right"></i></h6>
+                </div>
+            </div>
+
+            
+            <img src="/img/readOthers/money_hue34e9852d786b0230414ecef221d3327_246341_500x0_resize_q75_box.jpg" alt="/img/readOthers/money.jpg"
+                class="card-img-bottom img-fluid lazyload">
+            
+
+            
+        </div>
+    </a>
+</div>
+
+
+      
+
+      
+<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <a href="https://yjmbc.github.io/work/hugo-start/">
+        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
+            <div class="card-body">
+                <h3 class="fw-bold post-title">hugo 实践记录</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta text-muted">
+  
+  
+
+  2024-06-14
+
+  
+
+  
+  &nbsp;|&nbsp; <i class="bi bi-clock"></i>&nbsp;2&nbsp;分钟
+  
+
+  
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;302&nbsp;个字
+  
+
+  
+</span>
+
+                </p>
+                
+
+                <div class="post-entry">
+                    
+                    hugo 构建个人博客页并部署到 github page 全过程简便记录...
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    
+                    <h6 class="text-muted link-underline">阅读全文 <i class="bi bi-arrow-right"></i></h6>
+                </div>
+            </div>
+
+            
+            <img src="/img/work/bird_hua68c1dd2524572bb27e66403597759f3_118666_500x0_resize_q75_box.jpg" alt="/img/work/bird.jpg"
+                class="card-img-bottom img-fluid lazyload">
+            
+
+            
+        </div>
+    </a>
+</div>
+
+
+      
+    </div>
+  </div>
+  
+  
+
+  
+
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="mx-2">
+                <i class="bi bi-rss"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://yjmbc.github.io/">YJMBC Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://yjmbc.github.io/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://yjmbc.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script>
+
+    
+  </body>
+</html>
+
