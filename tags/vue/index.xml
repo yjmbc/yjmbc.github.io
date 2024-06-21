@@ -15,5 +15,12 @@
       <guid>https://yjmbc.github.io/learn/vue-diff/</guid>
       <description>api 风格 选项式api 组合式api 组合式api 生命周期钩子对比 vue2 vue3 beforeCreate / created setup beforeMount onBeforeMount mounted onMounted beforeUpdate onBeforeUpdate updated onUpdated beforeDestroy onBeforeUnmount destroyed onUnmounted setup(props, context) { // Attribute (非响应式对象，等同于 $attrs) context.attrs // 插槽 (非响应式对象，等同于 $slots) context.slots // 触发事件 (方法，等同于 $emit) context.emit // 暴露公共 property (函数) context.expose return {} } 响应式 对象和数组的动态变化 const data = { name: &amp;#39;aa&amp;#39;, id: 001, information: { tel: &amp;#39;111xxxxx123&amp;#39;, email: &amp;#39;12xxxxx@xx.com&amp;#39; } } data.id = { number: 001 }; ✅ data.</description>
     </item>
+    <item>
+      <title>Vue3 React</title>
+      <link>https://yjmbc.github.io/learn/vue3-react/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/learn/vue3-react/</guid>
+      <description>vue3 流程 1 预处理 头头尾尾 2 新增节点 oldEnd &amp;lt; j 成立，说明在预处理时，所有旧子节点都处理完毕了 newEnd &amp;gt;= j 成立，说明预处理后，新的一组子节点中，存在未被处理的节点，这些节点就是新增的节点 3 删除节点 oldend &amp;gt;= j 存在未被处理的节点 newend &amp;lt; j 新节点 已经都处理过了 4 重新编号之前，最长递增子序列对应的是 新节点在旧节点列表中的为止 而编号之后，最长递增子序列对应的是 具体的节点&#xA;最长增长子序列 动态 贪心+二分 得到正确顺序的核心是记录前驱节点 React fiber 1 流程 JS 是单线程的，浏览器是多线程的 对于多线程的浏览器而言，它除了要处理 JS这个线程，它还要处理定时器，网络请求，UI渲染&amp;hellip;这些线程。 问题：浏览器中JS线程与UI线程互斥，假设这段代码运行的时间很久，那么浏览器就必须一直等待，严重情况下浏览器还可能失去响应 Fiber vs Stack Demo&#xA;卡顿，掉帧 人眼：24帧/秒 递归 dom 树&#xA;2 fiber 从运行机制上来解释，fiber是一种流程让出机制，它能让react中的同步渲染进行中断，并将渲染的控制权让回浏览器，从而达到不阻塞浏览器渲染的目的。 从数据角度来解释，fiber能细化成一种数据结构，或者一个执行单元。 传统： fiber： 数据结构：&#xA;const fiber = { stateNode,// dom节点实例 child,// 当前节点所关联的子节点 sibling,// 当前节点所关联的兄弟节点 return// 当前节点所关联的父节点 } 这样设计的好处就是在数据层已经在不同节点的关系给描述了出来，即便某一次任务被终止，当下次恢复任务时，这种结构也利于react恢复任务现场，知道自己接下来应该处理哪些节点。</description>
+    </item>
   </channel>
 </rss>

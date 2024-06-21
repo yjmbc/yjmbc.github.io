@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Vue3 React - YJMBC Blog</title>
+<meta name="description" content="vue3 和 react">
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "YJMBC Blog",
+    
+    "url": "https:\/\/yjmbc.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yjmbc.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yjmbc.github.io\/learn\/vue3-react\/",
+          "name": "Vue3 react"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Vue3 React",
+  "description" : "vue3 和 react",
+  "inLanguage" : "zh-cn",
+  "wordCount":  2628 ,
+  "datePublished" : "2024-06-21T00:00:00",
+  "dateModified" : "2024-06-21T00:00:00",
+  "image" : "https:\/\/yjmbc.github.io\/",
+  "keywords" : [ "vue, react, 2023" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/learn\/vue3-react\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yjmbc.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yjmbc.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Vue3 React" />
+<meta property="og:description" content="vue3 和 react">
+<meta property="og:image" content="https://yjmbc.github.io/img/learn/sea.jpg" />
+<meta property="og:url" content="https://yjmbc.github.io/learn/vue3-react/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YJMBC Blog" />
+<link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yjmbc.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yjmbc.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.127.0">
+<link rel="alternate" href="https://yjmbc.github.io/index.xml" type="application/rss+xml" title="YJMBC Blog">
+<script src="https://yjmbc.github.io/js/dark-mode.js"></script><script src="https://yjmbc.github.io/vendor/lunr/lunr.min.js"></script><script src="https://yjmbc.github.io/vendor/lunr/lunr.stemmer.support.js"></script>
+        <script src="https://yjmbc.github.io/vendor/lunr/lunr.zh.js"></script><script src="https://yjmbc.github.io/js/lunr-search.js" data-index="/search.json"></script><link rel="stylesheet" href="/style.min.css">
+
+
+
+
+
+  
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top mw-100">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+
+          <a class="navbar-brand fw-bold" href="https://yjmbc.github.io/">YJMBC Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-baseline">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="首页"
+                  href="/"> 首页</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="学习记录"
+                  href="/learn/"> 学习记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="实践记录"
+                  href="/work/"> 实践记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="阅读生活"
+                  href="/readothers/"> 阅读生活</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="分类记录"
+                  href="/tags/"> 分类记录</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="随手记"
+                  href="/collections/"> 随手记</a>
+              </li>
+
+              
+              
+
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-moon-stars" role="button"></a>
+              </li>
+
+              
+              <li class="nav-item search-item">
+                <form id="search" class="search" role="search">
+                  <label for="search-input" class="bi bi-search search-icon"></label>
+                  <input type="search" id="search-input" class="search-input">
+                </form>
+              </li>
+              
+            </ul>
+
+            
+            <template id="search-heading" hidden
+                data-results-none=""
+                data-results-one=""
+                data-results-many=""
+            >
+              <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+                  <h1 id="search-title" class="search-title"></h1>
+                </div>
+              </div>
+            </template>
+
+            <template id="search-result" hidden>
+              <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+                  <article class="content post">
+                    <h2><a class="summary-title-link"></a></h2>
+                    <div class="post-entry"></div>
+                    <div class="read-more-section">
+                      <h6 class="text-muted link-underline">
+                        <a class="read-more-link">
+                          阅读全文
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </template>
+            
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="learn-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Vue3 React
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        
+    </div>
+  </div>
+</header>
+
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        
+          
+            <img src="/img/learn/sea.jpg" alt="/img/learn/sea.jpg" class="card-img-bottom rounded img-fluid lazyload">
+          
+        
+
+
+        
+      </div>
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <h1 id="vue3">vue3</h1>
+<h2 id="流程">流程</h2>
+<p>1 预处理  头头尾尾 <br>
+2<img src="/images/vue3-react-0.png" alt="image.png"> <br>
+新增节点 <br>
+<img src="/images/vue3-react-1.png" alt="image.png"> <br>
+oldEnd &lt; j      成立，说明在预处理时，所有旧子节点都处理完毕了 <br>
+newEnd &gt;= j  成立，说明预处理后，新的一组子节点中，存在未被处理的节点，这些节点就是新增的节点 <br>
+3 删除节点 <br>
+<img src="/images/vue3-react-2.png" alt="image.png"> <br>
+oldend  &gt;= j 存在未被处理的节点 <br>
+newend &lt; j 新节点  已经都处理过了 <br>
+4 <img src="/images/vue3-react-3.png" alt="image.png"> <br>
+<img src="/images/vue3-react-4.png" alt="image.png"></p>
+<p>重新编号之前，最长递增子序列对应的是 新节点在旧节点列表中的为止 <br>
+而编号之后，最长递增子序列对应的是 具体的节点</p>
+<h2 id="最长增长子序列"><strong>最长增长子序列</strong></h2>
+<p>动态 <br>
+贪心+二分  <br>
+得到正确顺序的核心是记录前驱节点 <br>
+<img src="/images/vue3-react-5.png" alt="image.png"></p>
+<h1 id="react-fiber">React fiber</h1>
+<h2 id="1-流程">1 流程</h2>
+<p>JS 是单线程的，浏览器是多线程的 <br>
+对于多线程的浏览器而言，它除了要处理 JS这个线程，它还要处理定时器，网络请求，UI渲染&hellip;这些线程。 <br>
+问题：浏览器中JS线程与UI线程互斥，假设这段代码运行的时间很久，那么浏览器就必须一直等待，严重情况下浏览器还可能失去响应 <br>
+<a href="https://claudiopro.github.io/react-fiber-vs-stack-demo/">Fiber vs Stack Demo</a></p>
+<p>卡顿，掉帧 <br>
+人眼：24帧/秒 <br>
+递归 dom 树</p>
+<h2 id="imagepngimagesvue3-react-6png"><img src="/images/vue3-react-6.png" alt="image.png"></h2>
+<h2 id="2-fiber">2 fiber</h2>
+<ul>
+<li>从运行机制上来解释，fiber是一种流程让出机制，它能让react中的同步渲染进行中断，并将渲染的控制权让回浏览器，从而达到不阻塞浏览器渲染的目的。</li>
+<li>从数据角度来解释，fiber能细化成一种数据结构，或者一个<strong>执行单元</strong>。</li>
+</ul>
+<p>传统： <br>
+<img src="/images/vue3-react-7.png" alt="image.png"></p>
+<p>fiber： <br>
+<img src="/images/vue3-react-8.png" alt="image.png"></p>
+<p>数据结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fiber</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stateNode</span>,<span style="color:#75715e">// dom节点实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">child</span>,<span style="color:#75715e">// 当前节点所关联的子节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sibling</span>,<span style="color:#75715e">// 当前节点所关联的兄弟节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span><span style="color:#75715e">// 当前节点所关联的父节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>这样设计的好处就是在数据层已经在不同节点的关系给描述了出来，即便某一次任务被终止，当下次恢复任务时，这种结构也利于react恢复任务现场，知道自己接下来应该处理哪些节点。</p>
+<p><img src="/images/vue3-react-9.png" alt="image.png"> <br>
+支持增量渲染，fiber将react中的渲染任务拆分到每一帧。 <br>
+支持暂停，终止以及恢复之前的渲染任务。（没渲染时间了就将控制权让回浏览器） <br>
+通过fiber赋予了不同任务的优先级。（让优先级高的运行，比如事件交互响应，页面渲染等，像网络请求之类的往后排） <br>
+支持并发处理（面对可变的一堆任务，react始终处理最高优先级，灵活调整处理顺序，保证重要的任务都会在允许的最快时间内响应）</p>
+<p><img src="/images/vue3-react-10.png" alt="image.png"></p>
+<ul>
+<li>首先需要处理输入事件，能够让用户得到最早的反馈</li>
+<li>接下来是处理定时器，需要检查定时器是否到时间，并执行对应的回调</li>
+<li>接下来处理 Begin Frame（开始帧），即每一帧的事件，包括 window.resize、scroll、media query change 等</li>
+<li>接下来执行请求动画帧 requestAnimationFrame（rAF），即在每次绘制之前，会执行 rAF 回调</li>
+<li>紧接着进行 Layout 操作，包括计算布局和更新布局，即这个元素的样式是怎样的，它应该在页面如何展示</li>
+<li>接着进行 Paint 操作，得到树中每个节点的尺寸与位置等信息，浏览器针对每个元素进行内容填充</li>
+<li>到这时以上的六个阶段都已经完成了，接下来处于空闲阶段（Idle Peroid），可以在这时执行 requestIdleCallback 里注册的任务</li>
+</ul>
+<h2 id="3-requestidlecallback">3 requestIdleCallback</h2>
+<p>window.requestIdleCallback() 方法插入一个函数，这个函数将在浏览器空闲时期被调用。这使开发者能够在主事件循环上执行后台和低优先级工作，而不会影响延迟关键事件，如动画和输入响应。函数一般会按先进先调用的顺序执行，然而，如果回调函数指定了执行超时时间timeout，则有可能为了在超时前执行函数而打乱执行顺序。</p>
+<p>requestIdleCallback 也能接受一个 callback，而这个callback 又能接收一个由浏览器告知你执行剩余时间的参数IdleDeadline</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">process</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">deadline</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 通过deadline.timeRemaining可获取剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;deadline&#39;</span>, <span style="color:#a6e22e">deadline</span>.<span style="color:#a6e22e">timeRemaining</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span>(<span style="color:#a6e22e">process</span>);
+</span></span></code></pre></div><p>但需要注意的是，react在最终实现上并未直接采用 requestIdleCallback，一方面是requestIdleCallback目前还是实验中的api（<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback</a>），兼容性不是非常好，性能较低。于是react通过MessageChannel + requestAnimationFrame 自己模拟实现了requestIdleCallback。</p>
+<p><img src="/images/vue3-react-11.png" alt="image.png"> <br>
+(timeout )</p>
+<h2 id="4-requestanimationframecallback">4 requestAnimationFrame（callback）</h2>
+<p>window.requestAnimationFrame() 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行（60帧/秒）（更少的cpu，内存使用量）</p>
+<p>callback 下一次重绘之前更新动画帧所调用的函数(即上面所说的回调函数)。 该回调函数会被传入DOMHighResTimeStamp参数，该参数与performance.now()的返回值相同， 它表示requestAnimationFrame() 开始去执行回调函数的时刻。</p>
+<ol>
+<li>当前帧结束时间： 我们知道requestAnimationFrame的回调被执行的时机是当前帧开始绘制之前。也就是说DOMHighResTimeStamp是当前帧开始时候的时间，如果按照每一帧执行的时间是16.66ms。那么我们就能算出当前帧结束的时间， frameDeadline = DOMHighResTimeStamp + 16.66。</li>
+<li>当前帧剩余时间：当前帧剩余时间 = 当前帧结束时间(frameDeadline) - performance.now()。react中是用MessageChannel实现计算的。</li>
+</ol>
+<p>区别：</p>
+<ul>
+<li>requestAnimationFrame 的回调会在每一帧确定执行，属于高优先级任务</li>
+<li>requestIdleCallback 的回调则不一定，有空闲时间才执行，属于低优先级任务。</li>
+</ul>
+<h2 id="5-messagechannel">5 MessageChannel</h2>
+<p>MessageChannel允许我们在不同的浏览上下文，比如window.open()打开的窗口或者iframe等之间建立通信管道，并通过两端的端口（port1和port2）发送消息。MessageChannel以DOM Event的形式发送消息，所以它属于异步的宏任务。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port2的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port2的消息： pong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port1的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port1的消息： ping
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;pong&#39;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;ping&#39;</span>);
+</span></span></code></pre></div><p>应用场景</p>
+<h3 id="eventemitter">EventEmitter</h3>
+<p>做事件的订阅发布，实现不同脚本之间的通信</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// a.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ping&#39;</span> });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// b.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// {from: &#39;a&#39;, message: &#39;ping&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">b</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./b.js&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port1</span>);
+</span></span></code></pre></div><h3 id="iframe">iframe</h3>
+<p>window与单个iframe或者多个iframe之间的通信可以使用MessageChannel，通过只暴露有限的能力从而保证安全性。</p>
+<h3 id="web-worker">Web Worker</h3>
+<p>Web Worker 可以使脚本运行在新的线程中，它们独立于主线程，可以进行大量的计算活动，而不会影响主线程的 UI 渲染。当计算结束之后，它们可以把结果发送给主线程，从而形成了高效、良好的用户体验。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// worker1.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from main window&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { command: &#39;connect&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">command</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connect&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connected&#39;</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worker1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Worker</span>(<span style="color:#e6db74">&#39;worker1.js&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">command</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connect&#39;</span> });
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from worker1&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { message: &#39;connected&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><h3 id="react">react</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 计算出当前帧 结束时间点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deadlineTime</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callback</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 接收并执行宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 判断当前帧是否还有空闲，即返回的是剩下的时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeRemaining</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">timeRemaining</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 有空闲时间 且 有回调任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeRemaining</span>, <span style="color:#75715e">// 计算剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">didTimeout</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 当前帧是否完成
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 执行回调
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">deadline</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">rafTime</span> =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 结束时间点 = 开始时间点 + 一帧用时16.667ms
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rafTime</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">16.667</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 发送个宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="6-调度器">6 调度器</h2>
+<ol>
+<li>暂停 JS 执行，将主线程还给浏览器，让浏览器有机会更新页面</li>
+<li>在未来某个时刻继续调度任务，执行上次还没有完成的任务</li>
+</ol>
+<p>React更新时和Scheduler的交互流程如下：</p>
+<ol>
+<li>React 组件状态更新，向 Scheduler 中存入一个任务，该任务为 React 更新算法。</li>
+<li>Scheduler 调度该任务，执行 React 更新算法。</li>
+<li>React 在调和阶段（reconciliation）更新一个 Fiber 之后，会询问 Scheduler 是否需要暂停。如果不需要暂停，则重复步骤 3，继续更新下一个 Fiber。</li>
+<li>如果 Scheduler 表示需要暂停，则 React 将返回一个函数，该函数用于告诉 Scheduler 任务还没有完成。Scheduler 将在未来某时刻调度该任务。</li>
+</ol>
+<p>要满足这两点就需要调度一个宏任务，因为宏任务是在下次事件循环中执行，不会阻塞本次页面更新。而微任务是在本次页面更新前执行，与同步执行无异，不会让出主线程。</p>
+<p>理想情况下每一帧都是一次loop，但如果因为某些原因，如某微任务执行太久，时间超出当前帧(16.66ms)甚至超出多帧，那么本次循环将在该微任务执行完才结束，然后才进行渲染，也就是所说的掉帧。</p>
+<h2 id="7-高频短期时间片">7 高频短期时间片</h2>
+<p>由于 rAF 仰仗显示器的刷新频率，太过依赖设备本身运作流程，存在不稳定性。为了在每一帧尽可能多的执行任务，React 团队采用了 5ms 间隔的宏任务消息事件来发起任务调度。</p>
+<p>Scheduler 会将任务分为两种类型：taskQueue 和 timerQueue， <br>
+taskQueue 队列中存放的是需要立即执行的任务（已就绪任务）； <br>
+timerQueue 队列中存放的是可以延期执行的任务（未就绪任务）。 <br>
+所以分别提供了两种调度任务方式：requestHostCallback 和 requestHostTimeout。</p>
+<p>shouldYieldToHost 会被用在外部 workLoop 循环执行任务时，确定是否需要中断执行，让出主线程。 <br>
+workLoop 循环</p>
+<ul>
+<li>判断当前任务是否过期
+<ul>
+<li>如果过期了，则一定要在当前宏任务事件中执行完成</li>
+<li>如果还没过期，则需要判断当前宏任务事件执行时间是否超过 5 毫秒，如果超过，则退出循环，剩余任务在下一个宏任务事件中处理</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> window <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">MessageChannel</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 非浏览器环境，或不支持 MessageChannel，会使用 setTimeout 宏任务来实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 保存 api 引用，防止 polyfill 覆盖它们
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">setTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">setTimeout</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clearTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">clearTimeout</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getCurrentTime</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>(); <span style="color:#75715e">// 页面加载后开始计算
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// 标记 MessageChannel 正在运行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// 要执行的处理函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 用作终止 setTimeout 延迟任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义每一帧工作时间，默认时间为 5ms，React 会根据浏览器主机环境进行重新计算。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 过期时间，让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">shouldYieldToHost</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getCurrentTime</span>() <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">deadline</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 默认空闲执行时间是5ms，用户可通过该方法来根据不同用户主机的设备刷新率（FPS）来计算预留时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">forceFrameRate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">fps</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">125</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">fps</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 开启高频短间隔 5ms 执行工作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义宏任务，建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>; <span style="color:#75715e">// 用于发布任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performWorkUntilDeadline</span>; <span style="color:#75715e">// 处理任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>; <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isMessageLoopRunning</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 发起宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>, <span style="color:#a6e22e">ms</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">getCurrentTime</span>());
+</span></span><span style="display:flex;"><span>    }, <span style="color:#a6e22e">ms</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">taskTimeoutID</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurrentTime</span>(); <span style="color:#75715e">// 拿到当前时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 根据 yieldInterval（5ms）计算剩余时间（任务执行截止时间）。这种方式意味着 port.postMessage 开始后总有剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">yieldInterval</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 标识还有时间，类似 requestIdleCallback deadline.didTimeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasTimeRemaining</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasMoreWork</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scheduledHostCallback</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">hasTimeRemaining</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentTime</span>,
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 执行完成，没有新任务，初始化工作环境
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">hasMoreWork</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 如果任务截止时间过期（根据 shouldYieldToHost()），还有需要处理的工作，再发起一个异步宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>宏任务 settimeout() <br>
+原因是setTimeout在递归调用下，塞入队列的最低延时会变为4ms，一帧一共就16ms， <br>
+高频短期时间片默认也就5ms，浪费的这3~4ms是不可容忍的。</p>
+<p>requestAnimationFrame <br>
+从流程上看，RAF的执行时机是在渲染前，但其实浏览器并没有规定应该何时渲染页面，因此RAF是不稳定的。</p>
+<h2 id="8-reconcile">8 reconcile</h2>
+<p>使用tag（标签名）和 key识别节点，区分出前后的节点是否变化，以达到尽量复用无变化的节点</p>
+<p><img src="/images/vue3-react-12.png" alt="image.png"> <br>
+更新删除节点 <br>
+<img src="/images/vue3-react-13.png" alt="image.png"></p>
+<p>react 的 diff 算法分为两个阶段： <br>
+第一个阶段一一对比，如果可以复用就下一个，不可以复用就结束。 <br>
+第二个阶段把剩下的老 fiber 放到 map 里，遍历剩余的 vdom，一一查找 map 中是否有可复用的节点。 <br>
+最后把剩下的老 fiber 删掉，剩下的新 vdom 新增。 <br>
+这样就完成了更新时的 reconcile 过程。</p>
+<h2 id="react-vue-区别">react vue 区别</h2>
+<p>1 react : 用户感知 <br>
+2 vue : 缩短运算时间</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;virtual-dom&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">p</span>&gt;Virtual DOM&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 2&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 3&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">div</span>&gt;Hello World&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt; 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./element.js&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ul</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;virtual-dom&#39;</span>},
+</span></span><span style="display:flex;"><span>        [    <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;p&#39;</span>,{},[<span style="color:#e6db74">&#39;Virtual DOM&#39;</span>]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list&#39;</span> }, 
+</span></span><span style="display:flex;"><span>                  [	   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 1&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 2&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 3&#39;</span>])]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{},[<span style="color:#e6db74">&#39;Hello World&#39;</span>])
+</span></span><span style="display:flex;"><span>        ]) 
+</span></span></code></pre></div><h1 id="vue3-1">vue3</h1>
+<h2 id="流程-1">流程</h2>
+<p>1 预处理  头头尾尾 <br>
+2<img src="/images/vue3-react-0.png" alt="image.png"> <br>
+新增节点 <br>
+<img src="/images/vue3-react-1.png" alt="image.png"> <br>
+oldEnd &lt; j      成立，说明在预处理时，所有旧子节点都处理完毕了 <br>
+newEnd &gt;= j  成立，说明预处理后，新的一组子节点中，存在未被处理的节点，这些节点就是新增的节点 <br>
+3 删除节点 <br>
+<img src="/images/vue3-react-2.png" alt="image.png"> <br>
+oldend  &gt;= j 存在未被处理的节点 <br>
+newend &lt; j 新节点  已经都处理过了 <br>
+4 <img src="/images/vue3-react-3.png" alt="image.png"> <br>
+<img src="/images/vue3-react-4.png" alt="image.png"></p>
+<p>重新编号之前，最长递增子序列对应的是 新节点在旧节点列表中的为止 <br>
+而编号之后，最长递增子序列对应的是 具体的节点</p>
+<h2 id="最长增长子序列-1"><strong>最长增长子序列</strong></h2>
+<p>动态 <br>
+贪心+二分  <br>
+得到正确顺序的核心是记录前驱节点 <br>
+<img src="/images/vue3-react-5.png" alt="image.png"></p>
+<h1 id="react-fiber-1">React fiber</h1>
+<h2 id="1-流程-1">1 流程</h2>
+<p>JS 是单线程的，浏览器是多线程的 <br>
+对于多线程的浏览器而言，它除了要处理 JS这个线程，它还要处理定时器，网络请求，UI渲染&hellip;这些线程。 <br>
+问题：浏览器中JS线程与UI线程互斥，假设这段代码运行的时间很久，那么浏览器就必须一直等待，严重情况下浏览器还可能失去响应 <br>
+<a href="https://claudiopro.github.io/react-fiber-vs-stack-demo/">Fiber vs Stack Demo</a></p>
+<p>卡顿，掉帧 <br>
+人眼：24帧/秒 <br>
+递归 dom 树</p>
+<h2 id="imagepngimagesvue3-react-6png-1"><img src="/images/vue3-react-6.png" alt="image.png"></h2>
+<h2 id="2-fiber-1">2 fiber</h2>
+<ul>
+<li>从运行机制上来解释，fiber是一种流程让出机制，它能让react中的同步渲染进行中断，并将渲染的控制权让回浏览器，从而达到不阻塞浏览器渲染的目的。</li>
+<li>从数据角度来解释，fiber能细化成一种数据结构，或者一个<strong>执行单元</strong>。</li>
+</ul>
+<p>传统： <br>
+<img src="/images/vue3-react-7.png" alt="image.png"></p>
+<p>fiber： <br>
+<img src="/images/vue3-react-8.png" alt="image.png"></p>
+<p>数据结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fiber</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stateNode</span>,<span style="color:#75715e">// dom节点实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">child</span>,<span style="color:#75715e">// 当前节点所关联的子节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sibling</span>,<span style="color:#75715e">// 当前节点所关联的兄弟节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span><span style="color:#75715e">// 当前节点所关联的父节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>这样设计的好处就是在数据层已经在不同节点的关系给描述了出来，即便某一次任务被终止，当下次恢复任务时，这种结构也利于react恢复任务现场，知道自己接下来应该处理哪些节点。</p>
+<p><img src="/images/vue3-react-9.png" alt="image.png"> <br>
+支持增量渲染，fiber将react中的渲染任务拆分到每一帧。 <br>
+支持暂停，终止以及恢复之前的渲染任务。（没渲染时间了就将控制权让回浏览器） <br>
+通过fiber赋予了不同任务的优先级。（让优先级高的运行，比如事件交互响应，页面渲染等，像网络请求之类的往后排） <br>
+支持并发处理（面对可变的一堆任务，react始终处理最高优先级，灵活调整处理顺序，保证重要的任务都会在允许的最快时间内响应）</p>
+<p><img src="/images/vue3-react-10.png" alt="image.png"></p>
+<ul>
+<li>首先需要处理输入事件，能够让用户得到最早的反馈</li>
+<li>接下来是处理定时器，需要检查定时器是否到时间，并执行对应的回调</li>
+<li>接下来处理 Begin Frame（开始帧），即每一帧的事件，包括 window.resize、scroll、media query change 等</li>
+<li>接下来执行请求动画帧 requestAnimationFrame（rAF），即在每次绘制之前，会执行 rAF 回调</li>
+<li>紧接着进行 Layout 操作，包括计算布局和更新布局，即这个元素的样式是怎样的，它应该在页面如何展示</li>
+<li>接着进行 Paint 操作，得到树中每个节点的尺寸与位置等信息，浏览器针对每个元素进行内容填充</li>
+<li>到这时以上的六个阶段都已经完成了，接下来处于空闲阶段（Idle Peroid），可以在这时执行 requestIdleCallback 里注册的任务</li>
+</ul>
+<h2 id="3-requestidlecallback-1">3 requestIdleCallback</h2>
+<p>window.requestIdleCallback() 方法插入一个函数，这个函数将在浏览器空闲时期被调用。这使开发者能够在主事件循环上执行后台和低优先级工作，而不会影响延迟关键事件，如动画和输入响应。函数一般会按先进先调用的顺序执行，然而，如果回调函数指定了执行超时时间timeout，则有可能为了在超时前执行函数而打乱执行顺序。</p>
+<p>requestIdleCallback 也能接受一个 callback，而这个callback 又能接收一个由浏览器告知你执行剩余时间的参数IdleDeadline</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">process</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">deadline</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 通过deadline.timeRemaining可获取剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;deadline&#39;</span>, <span style="color:#a6e22e">deadline</span>.<span style="color:#a6e22e">timeRemaining</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span>(<span style="color:#a6e22e">process</span>);
+</span></span></code></pre></div><p>但需要注意的是，react在最终实现上并未直接采用 requestIdleCallback，一方面是requestIdleCallback目前还是实验中的api（<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback</a>），兼容性不是非常好，性能较低。于是react通过MessageChannel + requestAnimationFrame 自己模拟实现了requestIdleCallback。</p>
+<p><img src="/images/vue3-react-11.png" alt="image.png"> <br>
+(timeout )</p>
+<h2 id="4-requestanimationframecallback-1">4 requestAnimationFrame（callback）</h2>
+<p>window.requestAnimationFrame() 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行（60帧/秒）（更少的cpu，内存使用量）</p>
+<p>callback 下一次重绘之前更新动画帧所调用的函数(即上面所说的回调函数)。 该回调函数会被传入DOMHighResTimeStamp参数，该参数与performance.now()的返回值相同， 它表示requestAnimationFrame() 开始去执行回调函数的时刻。</p>
+<ol>
+<li>当前帧结束时间： 我们知道requestAnimationFrame的回调被执行的时机是当前帧开始绘制之前。也就是说DOMHighResTimeStamp是当前帧开始时候的时间，如果按照每一帧执行的时间是16.66ms。那么我们就能算出当前帧结束的时间， frameDeadline = DOMHighResTimeStamp + 16.66。</li>
+<li>当前帧剩余时间：当前帧剩余时间 = 当前帧结束时间(frameDeadline) - performance.now()。react中是用MessageChannel实现计算的。</li>
+</ol>
+<p>区别：</p>
+<ul>
+<li>requestAnimationFrame 的回调会在每一帧确定执行，属于高优先级任务</li>
+<li>requestIdleCallback 的回调则不一定，有空闲时间才执行，属于低优先级任务。</li>
+</ul>
+<h2 id="5-messagechannel-1">5 MessageChannel</h2>
+<p>MessageChannel允许我们在不同的浏览上下文，比如window.open()打开的窗口或者iframe等之间建立通信管道，并通过两端的端口（port1和port2）发送消息。MessageChannel以DOM Event的形式发送消息，所以它属于异步的宏任务。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port2的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port2的消息： pong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port1的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port1的消息： ping
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;pong&#39;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;ping&#39;</span>);
+</span></span></code></pre></div><p>应用场景</p>
+<h3 id="eventemitter-1">EventEmitter</h3>
+<p>做事件的订阅发布，实现不同脚本之间的通信</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// a.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ping&#39;</span> });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// b.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// {from: &#39;a&#39;, message: &#39;ping&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">b</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./b.js&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port1</span>);
+</span></span></code></pre></div><h3 id="iframe-1">iframe</h3>
+<p>window与单个iframe或者多个iframe之间的通信可以使用MessageChannel，通过只暴露有限的能力从而保证安全性。</p>
+<h3 id="web-worker-1">Web Worker</h3>
+<p>Web Worker 可以使脚本运行在新的线程中，它们独立于主线程，可以进行大量的计算活动，而不会影响主线程的 UI 渲染。当计算结束之后，它们可以把结果发送给主线程，从而形成了高效、良好的用户体验。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// worker1.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from main window&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { command: &#39;connect&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">command</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connect&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connected&#39;</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worker1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Worker</span>(<span style="color:#e6db74">&#39;worker1.js&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">command</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connect&#39;</span> });
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from worker1&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { message: &#39;connected&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><h3 id="react-1">react</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 计算出当前帧 结束时间点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deadlineTime</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callback</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 接收并执行宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 判断当前帧是否还有空闲，即返回的是剩下的时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeRemaining</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">timeRemaining</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 有空闲时间 且 有回调任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeRemaining</span>, <span style="color:#75715e">// 计算剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">didTimeout</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 当前帧是否完成
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 执行回调
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">deadline</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">rafTime</span> =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 结束时间点 = 开始时间点 + 一帧用时16.667ms
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rafTime</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">16.667</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 发送个宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="6-调度器-1">6 调度器</h2>
+<ol>
+<li>暂停 JS 执行，将主线程还给浏览器，让浏览器有机会更新页面</li>
+<li>在未来某个时刻继续调度任务，执行上次还没有完成的任务</li>
+</ol>
+<p>React更新时和Scheduler的交互流程如下：</p>
+<ol>
+<li>React 组件状态更新，向 Scheduler 中存入一个任务，该任务为 React 更新算法。</li>
+<li>Scheduler 调度该任务，执行 React 更新算法。</li>
+<li>React 在调和阶段（reconciliation）更新一个 Fiber 之后，会询问 Scheduler 是否需要暂停。如果不需要暂停，则重复步骤 3，继续更新下一个 Fiber。</li>
+<li>如果 Scheduler 表示需要暂停，则 React 将返回一个函数，该函数用于告诉 Scheduler 任务还没有完成。Scheduler 将在未来某时刻调度该任务。</li>
+</ol>
+<p>要满足这两点就需要调度一个宏任务，因为宏任务是在下次事件循环中执行，不会阻塞本次页面更新。而微任务是在本次页面更新前执行，与同步执行无异，不会让出主线程。</p>
+<p>理想情况下每一帧都是一次loop，但如果因为某些原因，如某微任务执行太久，时间超出当前帧(16.66ms)甚至超出多帧，那么本次循环将在该微任务执行完才结束，然后才进行渲染，也就是所说的掉帧。</p>
+<h2 id="7-高频短期时间片-1">7 高频短期时间片</h2>
+<p>由于 rAF 仰仗显示器的刷新频率，太过依赖设备本身运作流程，存在不稳定性。为了在每一帧尽可能多的执行任务，React 团队采用了 5ms 间隔的宏任务消息事件来发起任务调度。</p>
+<p>Scheduler 会将任务分为两种类型：taskQueue 和 timerQueue， <br>
+taskQueue 队列中存放的是需要立即执行的任务（已就绪任务）； <br>
+timerQueue 队列中存放的是可以延期执行的任务（未就绪任务）。 <br>
+所以分别提供了两种调度任务方式：requestHostCallback 和 requestHostTimeout。</p>
+<p>shouldYieldToHost 会被用在外部 workLoop 循环执行任务时，确定是否需要中断执行，让出主线程。 <br>
+workLoop 循环</p>
+<ul>
+<li>判断当前任务是否过期
+<ul>
+<li>如果过期了，则一定要在当前宏任务事件中执行完成</li>
+<li>如果还没过期，则需要判断当前宏任务事件执行时间是否超过 5 毫秒，如果超过，则退出循环，剩余任务在下一个宏任务事件中处理</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> window <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">MessageChannel</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 非浏览器环境，或不支持 MessageChannel，会使用 setTimeout 宏任务来实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 保存 api 引用，防止 polyfill 覆盖它们
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">setTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">setTimeout</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clearTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">clearTimeout</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getCurrentTime</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>(); <span style="color:#75715e">// 页面加载后开始计算
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// 标记 MessageChannel 正在运行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// 要执行的处理函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 用作终止 setTimeout 延迟任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义每一帧工作时间，默认时间为 5ms，React 会根据浏览器主机环境进行重新计算。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 过期时间，让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">shouldYieldToHost</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getCurrentTime</span>() <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">deadline</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 默认空闲执行时间是5ms，用户可通过该方法来根据不同用户主机的设备刷新率（FPS）来计算预留时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">forceFrameRate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">fps</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">125</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">fps</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 开启高频短间隔 5ms 执行工作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义宏任务，建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>; <span style="color:#75715e">// 用于发布任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performWorkUntilDeadline</span>; <span style="color:#75715e">// 处理任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>; <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isMessageLoopRunning</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 发起宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>, <span style="color:#a6e22e">ms</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">getCurrentTime</span>());
+</span></span><span style="display:flex;"><span>    }, <span style="color:#a6e22e">ms</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">taskTimeoutID</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurrentTime</span>(); <span style="color:#75715e">// 拿到当前时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 根据 yieldInterval（5ms）计算剩余时间（任务执行截止时间）。这种方式意味着 port.postMessage 开始后总有剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">yieldInterval</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 标识还有时间，类似 requestIdleCallback deadline.didTimeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasTimeRemaining</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasMoreWork</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scheduledHostCallback</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">hasTimeRemaining</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentTime</span>,
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 执行完成，没有新任务，初始化工作环境
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">hasMoreWork</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 如果任务截止时间过期（根据 shouldYieldToHost()），还有需要处理的工作，再发起一个异步宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>宏任务 settimeout() <br>
+原因是setTimeout在递归调用下，塞入队列的最低延时会变为4ms，一帧一共就16ms， <br>
+高频短期时间片默认也就5ms，浪费的这3~4ms是不可容忍的。</p>
+<p>requestAnimationFrame <br>
+从流程上看，RAF的执行时机是在渲染前，但其实浏览器并没有规定应该何时渲染页面，因此RAF是不稳定的。</p>
+<h2 id="8-reconcile-1">8 reconcile</h2>
+<p>使用tag（标签名）和 key识别节点，区分出前后的节点是否变化，以达到尽量复用无变化的节点</p>
+<p><img src="/images/vue3-react-12.png" alt="image.png"> <br>
+更新删除节点 <br>
+<img src="/images/vue3-react-13.png" alt="image.png"></p>
+<p>react 的 diff 算法分为两个阶段： <br>
+第一个阶段一一对比，如果可以复用就下一个，不可以复用就结束。 <br>
+第二个阶段把剩下的老 fiber 放到 map 里，遍历剩余的 vdom，一一查找 map 中是否有可复用的节点。 <br>
+最后把剩下的老 fiber 删掉，剩下的新 vdom 新增。 <br>
+这样就完成了更新时的 reconcile 过程。</p>
+<h2 id="react-vue-区别-1">react vue 区别</h2>
+<p>1 react : 用户感知 <br>
+2 vue : 缩短运算时间</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;virtual-dom&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">p</span>&gt;Virtual DOM&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 2&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 3&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">div</span>&gt;Hello World&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt; 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./element.js&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ul</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;virtual-dom&#39;</span>},
+</span></span><span style="display:flex;"><span>        [    <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;p&#39;</span>,{},[<span style="color:#e6db74">&#39;Virtual DOM&#39;</span>]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list&#39;</span> }, 
+</span></span><span style="display:flex;"><span>                  [	   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 1&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 2&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 3&#39;</span>])]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{},[<span style="color:#e6db74">&#39;Hello World&#39;</span>])
+</span></span><span style="display:flex;"><span>        ]) 
+</span></span></code></pre></div><h1 id="vue3-2">vue3</h1>
+<h2 id="流程-2">流程</h2>
+<p>1 预处理  头头尾尾 <br>
+2<img src="/images/vue3-react-0.png" alt="image.png"> <br>
+新增节点 <br>
+<img src="/images/vue3-react-1.png" alt="image.png"> <br>
+oldEnd &lt; j      成立，说明在预处理时，所有旧子节点都处理完毕了 <br>
+newEnd &gt;= j  成立，说明预处理后，新的一组子节点中，存在未被处理的节点，这些节点就是新增的节点 <br>
+3 删除节点 <br>
+<img src="/images/vue3-react-2.png" alt="image.png"> <br>
+oldend  &gt;= j 存在未被处理的节点 <br>
+newend &lt; j 新节点  已经都处理过了 <br>
+4 <img src="/images/vue3-react-3.png" alt="image.png"> <br>
+<img src="/images/vue3-react-4.png" alt="image.png"></p>
+<p>重新编号之前，最长递增子序列对应的是 新节点在旧节点列表中的为止 <br>
+而编号之后，最长递增子序列对应的是 具体的节点</p>
+<h2 id="最长增长子序列-2"><strong>最长增长子序列</strong></h2>
+<p>动态 <br>
+贪心+二分  <br>
+得到正确顺序的核心是记录前驱节点 <br>
+<img src="/images/vue3-react-5.png" alt="image.png"></p>
+<h1 id="react-fiber-2">React fiber</h1>
+<h2 id="1-流程-2">1 流程</h2>
+<p>JS 是单线程的，浏览器是多线程的 <br>
+对于多线程的浏览器而言，它除了要处理 JS这个线程，它还要处理定时器，网络请求，UI渲染&hellip;这些线程。 <br>
+问题：浏览器中JS线程与UI线程互斥，假设这段代码运行的时间很久，那么浏览器就必须一直等待，严重情况下浏览器还可能失去响应 <br>
+<a href="https://claudiopro.github.io/react-fiber-vs-stack-demo/">Fiber vs Stack Demo</a></p>
+<p>卡顿，掉帧 <br>
+人眼：24帧/秒 <br>
+递归 dom 树</p>
+<h2 id="imagepngimagesvue3-react-6png-2"><img src="/images/vue3-react-6.png" alt="image.png"></h2>
+<h2 id="2-fiber-2">2 fiber</h2>
+<ul>
+<li>从运行机制上来解释，fiber是一种流程让出机制，它能让react中的同步渲染进行中断，并将渲染的控制权让回浏览器，从而达到不阻塞浏览器渲染的目的。</li>
+<li>从数据角度来解释，fiber能细化成一种数据结构，或者一个<strong>执行单元</strong>。</li>
+</ul>
+<p>传统： <br>
+<img src="/images/vue3-react-7.png" alt="image.png"></p>
+<p>fiber： <br>
+<img src="/images/vue3-react-8.png" alt="image.png"></p>
+<p>数据结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fiber</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stateNode</span>,<span style="color:#75715e">// dom节点实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">child</span>,<span style="color:#75715e">// 当前节点所关联的子节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sibling</span>,<span style="color:#75715e">// 当前节点所关联的兄弟节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span><span style="color:#75715e">// 当前节点所关联的父节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>这样设计的好处就是在数据层已经在不同节点的关系给描述了出来，即便某一次任务被终止，当下次恢复任务时，这种结构也利于react恢复任务现场，知道自己接下来应该处理哪些节点。</p>
+<p><img src="/images/vue3-react-9.png" alt="image.png"> <br>
+支持增量渲染，fiber将react中的渲染任务拆分到每一帧。 <br>
+支持暂停，终止以及恢复之前的渲染任务。（没渲染时间了就将控制权让回浏览器） <br>
+通过fiber赋予了不同任务的优先级。（让优先级高的运行，比如事件交互响应，页面渲染等，像网络请求之类的往后排） <br>
+支持并发处理（面对可变的一堆任务，react始终处理最高优先级，灵活调整处理顺序，保证重要的任务都会在允许的最快时间内响应）</p>
+<p><img src="/images/vue3-react-10.png" alt="image.png"></p>
+<ul>
+<li>首先需要处理输入事件，能够让用户得到最早的反馈</li>
+<li>接下来是处理定时器，需要检查定时器是否到时间，并执行对应的回调</li>
+<li>接下来处理 Begin Frame（开始帧），即每一帧的事件，包括 window.resize、scroll、media query change 等</li>
+<li>接下来执行请求动画帧 requestAnimationFrame（rAF），即在每次绘制之前，会执行 rAF 回调</li>
+<li>紧接着进行 Layout 操作，包括计算布局和更新布局，即这个元素的样式是怎样的，它应该在页面如何展示</li>
+<li>接着进行 Paint 操作，得到树中每个节点的尺寸与位置等信息，浏览器针对每个元素进行内容填充</li>
+<li>到这时以上的六个阶段都已经完成了，接下来处于空闲阶段（Idle Peroid），可以在这时执行 requestIdleCallback 里注册的任务</li>
+</ul>
+<h2 id="3-requestidlecallback-2">3 requestIdleCallback</h2>
+<p>window.requestIdleCallback() 方法插入一个函数，这个函数将在浏览器空闲时期被调用。这使开发者能够在主事件循环上执行后台和低优先级工作，而不会影响延迟关键事件，如动画和输入响应。函数一般会按先进先调用的顺序执行，然而，如果回调函数指定了执行超时时间timeout，则有可能为了在超时前执行函数而打乱执行顺序。</p>
+<p>requestIdleCallback 也能接受一个 callback，而这个callback 又能接收一个由浏览器告知你执行剩余时间的参数IdleDeadline</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">process</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">deadline</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 通过deadline.timeRemaining可获取剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;deadline&#39;</span>, <span style="color:#a6e22e">deadline</span>.<span style="color:#a6e22e">timeRemaining</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span>(<span style="color:#a6e22e">process</span>);
+</span></span></code></pre></div><p>但需要注意的是，react在最终实现上并未直接采用 requestIdleCallback，一方面是requestIdleCallback目前还是实验中的api（<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback</a>），兼容性不是非常好，性能较低。于是react通过MessageChannel + requestAnimationFrame 自己模拟实现了requestIdleCallback。</p>
+<p><img src="/images/vue3-react-11.png" alt="image.png"> <br>
+(timeout )</p>
+<h2 id="4-requestanimationframecallback-2">4 requestAnimationFrame（callback）</h2>
+<p>window.requestAnimationFrame() 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行（60帧/秒）（更少的cpu，内存使用量）</p>
+<p>callback 下一次重绘之前更新动画帧所调用的函数(即上面所说的回调函数)。 该回调函数会被传入DOMHighResTimeStamp参数，该参数与performance.now()的返回值相同， 它表示requestAnimationFrame() 开始去执行回调函数的时刻。</p>
+<ol>
+<li>当前帧结束时间： 我们知道requestAnimationFrame的回调被执行的时机是当前帧开始绘制之前。也就是说DOMHighResTimeStamp是当前帧开始时候的时间，如果按照每一帧执行的时间是16.66ms。那么我们就能算出当前帧结束的时间， frameDeadline = DOMHighResTimeStamp + 16.66。</li>
+<li>当前帧剩余时间：当前帧剩余时间 = 当前帧结束时间(frameDeadline) - performance.now()。react中是用MessageChannel实现计算的。</li>
+</ol>
+<p>区别：</p>
+<ul>
+<li>requestAnimationFrame 的回调会在每一帧确定执行，属于高优先级任务</li>
+<li>requestIdleCallback 的回调则不一定，有空闲时间才执行，属于低优先级任务。</li>
+</ul>
+<h2 id="5-messagechannel-2">5 MessageChannel</h2>
+<p>MessageChannel允许我们在不同的浏览上下文，比如window.open()打开的窗口或者iframe等之间建立通信管道，并通过两端的端口（port1和port2）发送消息。MessageChannel以DOM Event的形式发送消息，所以它属于异步的宏任务。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port2的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port2的消息： pong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;收到来自port1的消息：&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// 收到来自port1的消息： ping
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;pong&#39;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;ping&#39;</span>);
+</span></span></code></pre></div><p>应用场景</p>
+<h3 id="eventemitter-2">EventEmitter</h3>
+<p>做事件的订阅发布，实现不同脚本之间的通信</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// a.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ping&#39;</span> });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// b.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// {from: &#39;a&#39;, message: &#39;ping&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">b</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./b.js&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">port1</span>, <span style="color:#a6e22e">port2</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">b</span>(<span style="color:#a6e22e">port2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">port1</span>);
+</span></span></code></pre></div><h3 id="iframe-2">iframe</h3>
+<p>window与单个iframe或者多个iframe之间的通信可以使用MessageChannel，通过只暴露有限的能力从而保证安全性。</p>
+<h3 id="web-worker-2">Web Worker</h3>
+<p>Web Worker 可以使脚本运行在新的线程中，它们独立于主线程，可以进行大量的计算活动，而不会影响主线程的 UI 渲染。当计算结束之后，它们可以把结果发送给主线程，从而形成了高效、良好的用户体验。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// worker1.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from main window&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { command: &#39;connect&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">command</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;connect&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connected&#39;</span> });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">worker1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Worker</span>(<span style="color:#e6db74">&#39;worker1.js&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">postMessage</span>({ <span style="color:#a6e22e">command</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;connect&#39;</span> });
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">worker1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;receive a message from worker1&#39;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">// { message: &#39;connected&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><h3 id="react-2">react</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 计算出当前帧 结束时间点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">deadlineTime</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">callback</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">port2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 接收并执行宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port2</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 判断当前帧是否还有空闲，即返回的是剩下的时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeRemaining</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">timeRemaining</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 有空闲时间 且 有回调任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timeRemaining</span>, <span style="color:#75715e">// 计算剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">didTimeout</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_timeRemain</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 当前帧是否完成
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 执行回调
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">deadline</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">requestIdleCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">cb</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">rafTime</span> =&gt; {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 结束时间点 = 开始时间点 + 一帧用时16.667ms
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">deadlineTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rafTime</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">16.667</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 发送个宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="6-调度器-2">6 调度器</h2>
+<ol>
+<li>暂停 JS 执行，将主线程还给浏览器，让浏览器有机会更新页面</li>
+<li>在未来某个时刻继续调度任务，执行上次还没有完成的任务</li>
+</ol>
+<p>React更新时和Scheduler的交互流程如下：</p>
+<ol>
+<li>React 组件状态更新，向 Scheduler 中存入一个任务，该任务为 React 更新算法。</li>
+<li>Scheduler 调度该任务，执行 React 更新算法。</li>
+<li>React 在调和阶段（reconciliation）更新一个 Fiber 之后，会询问 Scheduler 是否需要暂停。如果不需要暂停，则重复步骤 3，继续更新下一个 Fiber。</li>
+<li>如果 Scheduler 表示需要暂停，则 React 将返回一个函数，该函数用于告诉 Scheduler 任务还没有完成。Scheduler 将在未来某时刻调度该任务。</li>
+</ol>
+<p>要满足这两点就需要调度一个宏任务，因为宏任务是在下次事件循环中执行，不会阻塞本次页面更新。而微任务是在本次页面更新前执行，与同步执行无异，不会让出主线程。</p>
+<p>理想情况下每一帧都是一次loop，但如果因为某些原因，如某微任务执行太久，时间超出当前帧(16.66ms)甚至超出多帧，那么本次循环将在该微任务执行完才结束，然后才进行渲染，也就是所说的掉帧。</p>
+<h2 id="7-高频短期时间片-2">7 高频短期时间片</h2>
+<p>由于 rAF 仰仗显示器的刷新频率，太过依赖设备本身运作流程，存在不稳定性。为了在每一帧尽可能多的执行任务，React 团队采用了 5ms 间隔的宏任务消息事件来发起任务调度。</p>
+<p>Scheduler 会将任务分为两种类型：taskQueue 和 timerQueue， <br>
+taskQueue 队列中存放的是需要立即执行的任务（已就绪任务）； <br>
+timerQueue 队列中存放的是可以延期执行的任务（未就绪任务）。 <br>
+所以分别提供了两种调度任务方式：requestHostCallback 和 requestHostTimeout。</p>
+<p>shouldYieldToHost 会被用在外部 workLoop 循环执行任务时，确定是否需要中断执行，让出主线程。 <br>
+workLoop 循环</p>
+<ul>
+<li>判断当前任务是否过期
+<ul>
+<li>如果过期了，则一定要在当前宏任务事件中执行完成</li>
+<li>如果还没过期，则需要判断当前宏任务事件执行时间是否超过 5 毫秒，如果超过，则退出循环，剩余任务在下一个宏任务事件中处理</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> window <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">MessageChannel</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 非浏览器环境，或不支持 MessageChannel，会使用 setTimeout 宏任务来实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 保存 api 引用，防止 polyfill 覆盖它们
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">setTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">setTimeout</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clearTimeout</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">clearTimeout</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getCurrentTime</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>(); <span style="color:#75715e">// 页面加载后开始计算
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// 标记 MessageChannel 正在运行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// 要执行的处理函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 用作终止 setTimeout 延迟任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义每一帧工作时间，默认时间为 5ms，React 会根据浏览器主机环境进行重新计算。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 过期时间，让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 让出主线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">shouldYieldToHost</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getCurrentTime</span>() <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">deadline</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 默认空闲执行时间是5ms，用户可通过该方法来根据不同用户主机的设备刷新率（FPS）来计算预留时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">forceFrameRate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">fps</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">125</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fps</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">fps</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yieldInterval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 开启高频短间隔 5ms 执行工作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 定义宏任务，建立通信
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">channel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MessageChannel</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port2</span>; <span style="color:#75715e">// 用于发布任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">port1</span>.<span style="color:#a6e22e">onmessage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performWorkUntilDeadline</span>; <span style="color:#75715e">// 处理任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>; <span style="color:#75715e">// 保存任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isMessageLoopRunning</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 发起宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">requestHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">callback</span>, <span style="color:#a6e22e">ms</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">getCurrentTime</span>());
+</span></span><span style="display:flex;"><span>    }, <span style="color:#a6e22e">ms</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cancelHostTimeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">taskTimeoutID</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taskTimeoutID</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">performWorkUntilDeadline</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurrentTime</span>(); <span style="color:#75715e">// 拿到当前时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 根据 yieldInterval（5ms）计算剩余时间（任务执行截止时间）。这种方式意味着 port.postMessage 开始后总有剩余时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">deadline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">yieldInterval</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 标识还有时间，类似 requestIdleCallback deadline.didTimeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasTimeRemaining</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasMoreWork</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scheduledHostCallback</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">hasTimeRemaining</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentTime</span>,
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 执行完成，没有新任务，初始化工作环境
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">hasMoreWork</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scheduledHostCallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 如果任务截止时间过期（根据 shouldYieldToHost()），还有需要处理的工作，再发起一个异步宏任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isMessageLoopRunning</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>宏任务 settimeout() <br>
+原因是setTimeout在递归调用下，塞入队列的最低延时会变为4ms，一帧一共就16ms， <br>
+高频短期时间片默认也就5ms，浪费的这3~4ms是不可容忍的。</p>
+<p>requestAnimationFrame <br>
+从流程上看，RAF的执行时机是在渲染前，但其实浏览器并没有规定应该何时渲染页面，因此RAF是不稳定的。</p>
+<h2 id="8-reconcile-2">8 reconcile</h2>
+<p>使用tag（标签名）和 key识别节点，区分出前后的节点是否变化，以达到尽量复用无变化的节点</p>
+<p><img src="/images/vue3-react-12.png" alt="image.png"> <br>
+更新删除节点 <br>
+<img src="/images/vue3-react-13.png" alt="image.png"></p>
+<p>react 的 diff 算法分为两个阶段： <br>
+第一个阶段一一对比，如果可以复用就下一个，不可以复用就结束。 <br>
+第二个阶段把剩下的老 fiber 放到 map 里，遍历剩余的 vdom，一一查找 map 中是否有可复用的节点。 <br>
+最后把剩下的老 fiber 删掉，剩下的新 vdom 新增。 <br>
+这样就完成了更新时的 reconcile 过程。</p>
+<h2 id="react-vue-区别-2">react vue 区别</h2>
+<p>1 react : 用户感知 <br>
+2 vue : 缩短运算时间</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;virtual-dom&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">p</span>&gt;Virtual DOM&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 2&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span>&gt;Item 3&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#f92672">div</span>&gt;Hello World&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt; 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;./element.js&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ul</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;virtual-dom&#39;</span>},
+</span></span><span style="display:flex;"><span>        [    <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;p&#39;</span>,{},[<span style="color:#e6db74">&#39;Virtual DOM&#39;</span>]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list&#39;</span> }, 
+</span></span><span style="display:flex;"><span>                  [	   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 1&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 2&#39;</span>]),
+</span></span><span style="display:flex;"><span>                       <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;li&#39;</span>, { <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span> }, [<span style="color:#e6db74">&#39;Item 3&#39;</span>])]),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">el</span>(<span style="color:#e6db74">&#39;div&#39;</span>,{},[<span style="color:#e6db74">&#39;Hello World&#39;</span>])
+</span></span><span style="display:flex;"><span>        ]) 
+</span></span></code></pre></div>
+      </article>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr class="m-0"/>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
+        
+        <a href="https://yjmbc.github.io/tags/vue/">vue</a>
+        
+        <a href="https://yjmbc.github.io/tags/react/">react</a>
+        
+        <a href="https://yjmbc.github.io/tags/2023/">2023</a>
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
+
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/learn/markdown/"
+            data-toggle="tooltip" data-placement="top" title="Markdown 语法学习">&larr;
+            前一篇</a>
+        </li>
+        
+
+
+        
+        <li class="list-group-item ms-auto b-0 p-0">
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/learn/vue-diff/"
+            data-toggle="tooltip" data-placement="top" title="Vue2 -&gt; Vue3">后一篇
+            &rarr;</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
+  
+</div>
+
+<div class="">
+  
+  
+  
+  
+  
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mt-3">
+        <h3>阅读全文</h3>
+        <hr />
+      </div>
+
+      
+      
+
+      
+<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <a href="https://yjmbc.github.io/learn/vue-diff/">
+        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
+            <div class="card-body">
+                <h3 class="fw-bold post-title">Vue2 -&gt; Vue3</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta text-muted">
+  
+  
+
+  2024-06-21
+
+  
+
+  
+  &nbsp;|&nbsp; <i class="bi bi-clock"></i>&nbsp;6&nbsp;分钟
+  
+
+  
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;1222&nbsp;个字
+  
+
+  
+</span>
+
+                </p>
+                
+
+                <div class="post-entry">
+                    
+                    vue2/3 差异
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    
+                    <h6 class="text-muted link-underline">阅读全文 <i class="bi bi-arrow-right"></i></h6>
+                </div>
+            </div>
+
+            
+            <img src="/img/learn/fruit_huf1e40c83eeca0cb7a959765a7f5698a7_202464_500x0_resize_q75_box.jpg" alt="/img/learn/fruit.jpg"
+                class="card-img-bottom img-fluid lazyload">
+            
+
+            
+        </div>
+    </a>
+</div>
+
+
+      
+    </div>
+  </div>
+  
+  
+
+  
+
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="mx-2">
+                <i class="bi bi-rss"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://yjmbc.github.io/">YJMBC Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://yjmbc.github.io/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://yjmbc.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script>
+
+    
+  </body>
+</html>
+

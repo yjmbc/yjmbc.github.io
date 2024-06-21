@@ -59,7 +59,7 @@
   "headline": "hugo 实践记录",
   "description" : "hugo 构建个人博客页并部署到 github page 全过程简便记录...",
   "inLanguage" : "zh-cn",
-  "wordCount":  302 ,
+  "wordCount":  507 ,
   "datePublished" : "2024-06-14T00:00:00",
   "dateModified" : "2024-06-14T00:00:00",
   "image" : "https:\/\/yjmbc.github.io\/",
@@ -525,6 +525,97 @@ Thumbs.db
 </span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;feat: 自动提交hugo public代码 </span>$time<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>git push
 </span></span></code></pre></div><p>运行 build.sh 文件</p>
+<h1 id="新建一个文章">新建一个文章</h1>
+<p>大部分文章我都不是直接通过 md 来写，而是先在语雀上写好，然后导出为 md 文档，同时保留语雀的换行<!-- raw HTML omitted -->但是这样导出的文章，有两个问题</p>
+<ol>
+<li>换行符是跟在文本后面，并没有生效，我需要手动对换行符进行处理。</li>
+<li>图片是 cdn 上的资源，我希望图片放在项目的静态资源文件夹里</li>
+</ol>
+<p>所以需要一个程序来帮我对内容进行处理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;fs&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;path&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">axios</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;axios&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 从命令行读取需要转换的 markdown 文件的地址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">markdownFilePath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 从命令行读取转换之后的文件的路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outputFile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">3</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 路径里获取没有文件后缀名的文件名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">argv</span>[<span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/^(.*\/)?([^/.]+)\..+$/</span>, <span style="color:#e6db74">&#39;$2&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">markdownFilePath</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;确认需要转换的 markdown 文件路径&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#a6e22e">markdownFilePath</span>, <span style="color:#e6db74">&#34;utf-8&#34;</span>, (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">data</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;读错误&#34;</span>, <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">appendFile</span>(<span style="color:#a6e22e">outputFile</span>, <span style="color:#a6e22e">fileContent</span>, <span style="color:#e6db74">&#34;utf-8&#34;</span>, (<span style="color:#a6e22e">err</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;写入错误&#34;</span>, <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {string} data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 转换换行符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">contentWithoutBr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;br \/&gt;/g</span>, <span style="color:#e6db74">&#34;    \n&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imageRegex</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/\!\[[^\]]+\]\((https?:\/\/[^\s)]+)\)/g</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">match</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 获取全部的语雀 cdn 图片链接 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> ((<span style="color:#a6e22e">match</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">imageRegex</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">data</span>)) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">downLoadImages</span>(<span style="color:#a6e22e">match</span>[<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">num</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.png`</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 把链接替换成下载下来的图片的名字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">contentWithoutBr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">contentWithoutBr</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">match</span>[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">`/images/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">num</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.png`</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">num</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contentWithoutBr</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">downLoadImages</span>(<span style="color:#a6e22e">imageUrl</span>, <span style="color:#a6e22e">fileName</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 发请求获取文件并保存到静态目录文件夹的图片下
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">imageUrl</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">responseType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;stream&#39;</span>
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">writer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">createWriteStream</span>(<span style="color:#e6db74">`./static/images/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">writer</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">writer</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;error&#39;</span>, (<span style="color:#a6e22e">err</span>) =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">unlink</span>(<span style="color:#e6db74">`./</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.png`</span>, () =&gt; {})
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;请求图片错误&#39;</span>, <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>执行上面的文件需要传递两个参数，需要转化的 markdown 文件的地址，和创建的文章所在的地址<!-- raw HTML omitted -->当然图方便也可以用脚本实现</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span>-z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;请输入md文件地址&#34;</span>
+</span></span><span style="display:flex;"><span>    exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span>-z <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;请输入输出文件的地址&#34;</span>
+</span></span><span style="display:flex;"><span>    exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo new $2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node ./transform.js $1 $2
+</span></span></code></pre></div><p>从语雀导出文档后只要执行<!-- raw HTML omitted --><code>.\createBlog.sh C:\Users\Administrator\Downloads\vue3-react.md ./content/learn/vue3-react.md</code></p>
 
       </article>
     </div>
