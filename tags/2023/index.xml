@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2023 on YJMBC Blog</title>
+    <link>https://yjmbc.github.io/tags/2023/</link>
+    <description>Recent content in 2023 on YJMBC Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yjmbc.github.io/tags/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue2 -&gt; Vue3</title>
+      <link>https://yjmbc.github.io/learn/vue-diff/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/learn/vue-diff/</guid>
+      <description>api 风格 选项式api 组合式api 组合式api 生命周期钩子对比 vue2 vue3 beforeCreate / created setup beforeMount onBeforeMount mounted onMounted beforeUpdate onBeforeUpdate updated onUpdated beforeDestroy onBeforeUnmount destroyed onUnmounted setup(props, context) { // Attribute (非响应式对象，等同于 $attrs) context.attrs // 插槽 (非响应式对象，等同于 $slots) context.slots // 触发事件 (方法，等同于 $emit) context.emit // 暴露公共 property (函数) context.expose return {} } 响应式 对象和数组的动态变化 const data = { name: &amp;#39;aa&amp;#39;, id: 001, information: { tel: &amp;#39;111xxxxx123&amp;#39;, email: &amp;#39;12xxxxx@xx.com&amp;#39; } } data.id = { number: 001 }; ✅ data.</description>
+    </item>
+  </channel>
+</rss>
