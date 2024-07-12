@@ -6,8 +6,15 @@
     <description>Recent content in 2023 on YJMBC Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yjmbc.github.io/tags/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拖拽实现记录</title>
+      <link>https://yjmbc.github.io/work/drag/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/work/drag/</guid>
+      <description>一 反馈按钮 1 使用 drag event 来实现 主要思路： dragstart 的时候设置定时器隐藏原本的按钮 不然隐藏之后无法触发 dragstart 事件 drag 期间修改鼠标的样式，原本默认是 copy 的鼠标样式 dragend 的时候获取鼠标的位置，设置 style.top ，定时器恢复按钮的显示&#xA;实践发现，完全使用 drag event 不用针对点击事件进行额外的处理，拖拽流程也很流畅，但是如果不采用全屏都是可拖拽区域的写法，拖拽的时候会出现明显的回弹，为了避免回弹，使用全屏都是可拖拽区域的方法，又会导致鼠标的 copy 样式无法完全隐藏，（可以隐藏，但是偶尔太快拖动的时候会出现）这个问题在拖拽库中也可以观察到，例如: http://alloyteam.github.io/AlloyFinger/ 所以出于这一点的原因不采用 drag event 来实现&#xA;2 使用 mouse event 来实现 主要思路： 仿造 touch 事件来完成（ 这里的距离计算和下面vconsole中的计算方式是一样的 ） mousedown 的时候 记录鼠标的初始位置坐标 同时在 document 上重写 mouseup mousemove 事件&#xA;button.onmousedown = (e) =&amp;gt; { e.preventDefault(); // 记录鼠标点下去的开始位置 button.setAttribute(&amp;#39;startX&amp;#39;, `${e.clientX || 0}`); button.setAttribute(&amp;#39;startY&amp;#39;, `${e.clientY || 0}`); // 同时修改 mouseup mousemove 事件 document.</description>
+    </item>
     <item>
       <title>Vue2 -&gt; Vue3</title>
       <link>https://yjmbc.github.io/learn/vue-diff/</link>
