@@ -16,6 +16,13 @@
       <description>electron 项目安装之后，目录结构里有一个 resources 文件夹，文件夹里面有一个 app.asar 文件，这个文件相当于打包好了以后的 electron 项目的压缩文件。 下载 @electron/asar 包之后，进入 resources 文件夹下 asar extract app.asar ./app 这个命令会还原 项目打包之后的样子 然后理论上修改这个压缩包里的内容，再通过编译会 app.asar 文件，就可以实现对项目的更改 asar pack ./app app.asar 但是出于安全起见，打包的时候可以给文件加上签名，有了签名之后修改项目里的内容，都会导致签名失效。</description>
     </item>
     <item>
+      <title>阻止用户debugger</title>
+      <link>https://yjmbc.github.io/collections/debugger/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/collections/debugger/</guid>
+      <description>ai出来的时候我打开了文心一言和星火的控制台，两者的处理方式也不太一样&#xA;文心一言是循环无限debugger 但是这个只要禁止debugger就可以了&#xA;星火处理的很好，一开始我以为他监控了窗口大小，可视区域一旦变小，说明有人打开了控制台，然后就跳转到白页，但是我把控制台放到打开的新窗口仍然会跳走。 后来在网上找到了监控cpu使用量，一打开就会检测到变化，然后迅速跳到白页。&#xA;为了防止这个变化不明显，星火用 console.table 方法在控制台打印了很多表格。&#xA;但是这种监控的方式实际上是和刚打开的时候的处理效率进行对比，所以文章里面也提到了，如果用户打开着控制台进入，这个方法就会失效。&#xA;有一个相关文章 https://blog.guya.net/2014/06/20/how-to-know-when-chrome-console-is-open/ https://blog.guya.net/chrome/dev_tools/</description>
+    </item>
+    <item>
       <title>拖拽实现记录</title>
       <link>https://yjmbc.github.io/work/drag/</link>
       <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>

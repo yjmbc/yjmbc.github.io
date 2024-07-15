@@ -6,8 +6,15 @@
     <description>Recent content in 学习杂记 on YJMBC Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yjmbc.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>阻止用户debugger</title>
+      <link>https://yjmbc.github.io/collections/debugger/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/collections/debugger/</guid>
+      <description>ai出来的时候我打开了文心一言和星火的控制台，两者的处理方式也不太一样&#xA;文心一言是循环无限debugger 但是这个只要禁止debugger就可以了&#xA;星火处理的很好，一开始我以为他监控了窗口大小，可视区域一旦变小，说明有人打开了控制台，然后就跳转到白页，但是我把控制台放到打开的新窗口仍然会跳走。 后来在网上找到了监控cpu使用量，一打开就会检测到变化，然后迅速跳到白页。&#xA;为了防止这个变化不明显，星火用 console.table 方法在控制台打印了很多表格。&#xA;但是这种监控的方式实际上是和刚打开的时候的处理效率进行对比，所以文章里面也提到了，如果用户打开着控制台进入，这个方法就会失效。&#xA;有一个相关文章 https://blog.guya.net/2014/06/20/how-to-know-when-chrome-console-is-open/ https://blog.guya.net/chrome/dev_tools/</description>
+    </item>
     <item>
       <title>Markdown 语法学习</title>
       <link>https://yjmbc.github.io/learn/markdown/</link>
