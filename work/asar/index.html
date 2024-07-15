@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Markdown 语法学习 - YJMBC Blog</title>
-<meta name="description" content="markdown 语法学习">
+<title>编译和反编译 - YJMBC Blog</title>
+<meta name="description" content="electron 项目的编译和反编译">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/yjmbc.github.io\/learn\/markdown\/",
-          "name": "Markdown 语法学习"
+          "@id": "https:\/\/yjmbc.github.io\/work\/asar\/",
+          "name": "编译和反编译"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : ""
   },
-  "headline": "Markdown 语法学习",
-  "description" : "markdown 语法学习",
+  "headline": "编译和反编译",
+  "description" : "electron 项目的编译和反编译",
   "inLanguage" : "zh-cn",
-  "wordCount":  149 ,
-  "datePublished" : "2024-06-20T00:00:00",
-  "dateModified" : "2024-06-20T00:00:00",
+  "wordCount":  27 ,
+  "datePublished" : "2024-07-15T00:00:00",
+  "dateModified" : "2024-07-15T00:00:00",
   "image" : "https:\/\/yjmbc.github.io\/",
-  "keywords" : [ "学习杂记, 2024" ],
-  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/learn\/markdown\/",
+  "keywords" : [ "2024, electron" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/work\/asar\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/yjmbc.github.io\/",
@@ -78,10 +78,10 @@
 }
 </script>
 
-<meta property="og:title" content="Markdown 语法学习" />
-<meta property="og:description" content="markdown 语法学习">
-<meta property="og:image" content="https://yjmbc.github.io/img/learn/books.jpg" />
-<meta property="og:url" content="https://yjmbc.github.io/learn/markdown/" />
+<meta property="og:title" content="编译和反编译" />
+<meta property="og:description" content="electron 项目的编译和反编译">
+<meta property="og:image" content="https://yjmbc.github.io/img/work/cat.jpg" />
+<meta property="og:url" content="https://yjmbc.github.io/work/asar/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YJMBC Blog" />
 <link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
@@ -294,14 +294,14 @@
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             
 
-            <div class="learn-heading">
+            <div class="work-heading">
               
 
               
 
               
               <h1 class="fw-semibold display-5 lh-1 mb-3"> 
-                Markdown 语法学习
+                编译和反编译
                 
               </h1>
               
@@ -333,7 +333,7 @@
         
         
           
-            <img src="/img/learn/books.jpg" alt="/img/learn/books.jpg" class="card-img-bottom rounded img-fluid lazyload">
+            <img src="/img/work/cat.jpg" alt="/img/work/cat.jpg" class="card-img-bottom rounded img-fluid lazyload">
           
         
 
@@ -344,91 +344,13 @@
 
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       <article role="main" class="blog-post">
-        <h1 id="标题语法">标题语法</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># h1 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## h2 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>以此类推 到6  记得有空格
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>内容
-</span></span><span style="display:flex;"><span>======    
-</span></span><span style="display:flex;"><span>表示h1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>内容
-</span></span><span style="display:flex;"><span>------
-</span></span><span style="display:flex;"><span>表示h2
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> = / - 数量任意
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> ### 内容 {#id的名字}      =》 &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id的名字&#34;</span>&gt;内容&lt;/<span style="color:#f92672">h3</span>&gt;  好像有的不支持
-</span></span></code></pre></div><h1 id="段落">段落</h1>
-<p>空行空出来就分段了</p>
-<h1 id="换行">换行</h1>
-<p>结尾空格</p>
-<h1 id="字体样式">字体样式</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>**加粗内容**
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">__加粗内容__</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>*斜体*
-</span></span><span style="display:flex;"><span><span style="font-style:italic">_斜体_</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>***粗体且斜体***
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">___粗体且斜体___</span>
-</span></span></code></pre></div><h1 id="引用">引用</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&gt;引用内容
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt;放在一段里面的引用内容
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt;&gt;引用里面引用
-</span></span></span></code></pre></div><h1 id="列表">列表</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>有序列表
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 内容
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 内容
-</span></span><span style="display:flex;"><span>数字+. 前面数字是啥无所谓，但一定要是1开始
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>无序列表
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 列表
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> 列表
-</span></span><span style="display:flex;"><span>+ 列表
-</span></span><span style="display:flex;"><span>  + 缩进列表
-</span></span><span style="display:flex;"><span>三个符号都可以
-</span></span></code></pre></div><h1 id="代码">代码</h1>
-<p><code>代码</code></p>
-<h1 id="分隔线">分隔线</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>内容
-</span></span><span style="display:flex;"><span><span style="font-style:italic">**</span>************
-</span></span><span style="display:flex;"><span>--------------
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">______________</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> - _ 都可以作为分隔符
-</span></span></code></pre></div><h1 id="a标签语法">a标签语法</h1>
-<p><code>[a标签显示内容](链接地址 &quot;title&quot;)</code><!-- raw HTML omitted -->e.g. <code>[百度](https://www.baidu.com &quot;百度&quot;)</code></p>
-<h1 id="图片">图片</h1>
-<p><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
-<h1 id="转义字符">转义字符\</h1>
-<h1 id="支持html标签插入">支持html标签插入</h1>
-<h1 id="表格">表格</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Title1		| Title2   |
-</span></span><span style="display:flex;"><span>| --------- |	-------- |
-</span></span><span style="display:flex;"><span>| content1  | content2 |
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># 不一定要对齐
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>| Syntax      | Description | Test Text     |
-</span></span><span style="display:flex;"><span>| :---        |    :----:   |          ---: |
-</span></span><span style="display:flex;"><span>| 左对齐      | 剧中     | 右对齐   |
-</span></span></code></pre></div><h1 id="注脚">注脚</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[^数字或者单词] 不能包含空格和制表符
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Here&#39;s a simple footnote,[^1] and here&#39;s a longer one.[^bignote]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[^1]: 注脚1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[^bignote]: 注脚2
-</span></span></code></pre></div><h1 id="删除线">删除线</h1>
-<p><del>删除线</del></p>
-<h1 id="任务列表">任务列表</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">- [x]</span> x代表这一项完成了
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> 空白代表还没有
-</span></span></code></pre></div><h1 id="自动网址链接">自动网址链接</h1>
-<p>链接如果希望他仅仅做展示，不希望点击后跳走，可以使用反引号<!-- raw HTML omitted --><code>http://xxxxx.com</code></p>
+        <p>electron 项目安装之后，目录结构里有一个 resources 文件夹，文件夹里面有一个 app.asar 文件，这个文件相当于打包好了以后的 electron 项目的压缩文件。 <br>
+下载 <code>@electron/asar</code> 包之后，进入 resources 文件夹下 <br>
+<code>asar extract app.asar ./app</code> <br>
+这个命令会还原 项目打包之后的样子 <br>
+然后理论上修改这个压缩包里的内容，再通过编译会 app.asar 文件，就可以实现对项目的更改 <br>
+<code>asar pack ./app app.asar</code> <br>
+但是出于安全起见，打包的时候可以给文件加上签名，有了签名之后修改项目里的内容，都会导致签名失效。</p>
 
       </article>
     </div>
@@ -443,9 +365,9 @@
       
       <div class="blog-tags">
         
-        <a href="https://yjmbc.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/">学习杂记</a>
-        
         <a href="https://yjmbc.github.io/tags/2024/">2024</a>
+        
+        <a href="https://yjmbc.github.io/tags/electron/">electron</a>
         
       </div>
       
@@ -463,19 +385,13 @@
         
         <li class="list-group-item b-0 p-0">
 
-          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/learn/electron-communication/"
-            data-toggle="tooltip" data-placement="top" title="Electron 主进程 渲染进程">&larr;
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/work/drag/"
+            data-toggle="tooltip" data-placement="top" title="拖拽实现记录">&larr;
             前一篇</a>
         </li>
         
 
 
-        
-        <li class="list-group-item ms-auto b-0 p-0">
-          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/learn/vue3-react/"
-            data-toggle="tooltip" data-placement="top" title="Vue3 React">后一篇
-            &rarr;</a>
-        </li>
         
       </ul>
       
@@ -507,10 +423,10 @@
 
       
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="https://yjmbc.github.io/work/asar/">
+    <a href="https://yjmbc.github.io/learn/markdown/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
             <div class="card-body">
-                <h3 class="fw-bold post-title">编译和反编译</h3>
+                <h3 class="fw-bold post-title">Markdown 语法学习</h3>
                 
 
                 <p class="post-meta">
@@ -518,7 +434,7 @@
   
   
 
-  2024-07-15
+  2024-06-20
 
   
 
@@ -527,7 +443,7 @@
   
 
   
-  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;27&nbsp;个字
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;149&nbsp;个字
   
 
   
@@ -538,7 +454,7 @@
 
                 <div class="post-entry">
                     
-                    electron 项目的编译和反编译
+                    markdown 语法学习
 
                     
                 </div>
@@ -550,7 +466,7 @@
             </div>
 
             
-            <img src="/img/work/cat_hued8a66a53761b9993170c6295c0c0079_358294_500x0_resize_q75_box.jpg" alt="/img/work/cat.jpg"
+            <img src="/img/learn/books_hu3eb2e86216065986d804cc2ee46588fb_358519_500x0_resize_q75_box.jpg" alt="/img/learn/books.jpg"
                 class="card-img-bottom img-fluid lazyload">
             
 
