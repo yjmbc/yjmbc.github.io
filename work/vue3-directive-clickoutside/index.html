@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>编译和反编译 - YJMBC Blog</title>
-<meta name="description" content="electron 项目的编译和反编译">
+<title>vue3 自定义指令 点击空白处隐藏 - YJMBC Blog</title>
+<meta name="description" content="vue3 自定义指令 点击空白处隐藏元素">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/yjmbc.github.io\/work\/asar\/",
-          "name": "编译和反编译"
+          "@id": "https:\/\/yjmbc.github.io\/work\/vue3-directive-clickoutside\/",
+          "name": "Vue3 自定义指令 点击空白处隐藏"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : ""
   },
-  "headline": "编译和反编译",
-  "description" : "electron 项目的编译和反编译",
+  "headline": "vue3 自定义指令 点击空白处隐藏",
+  "description" : "vue3 自定义指令 点击空白处隐藏元素",
   "inLanguage" : "zh-cn",
-  "wordCount":  27 ,
-  "datePublished" : "2024-07-15T00:00:00",
-  "dateModified" : "2024-07-15T00:00:00",
+  "wordCount":  118 ,
+  "datePublished" : "2024-09-06T00:00:00",
+  "dateModified" : "2024-09-06T00:00:00",
   "image" : "https:\/\/yjmbc.github.io\/",
-  "keywords" : [ "2024, electron" ],
-  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/work\/asar\/",
+  "keywords" : [ "vue3, 2024" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/work\/vue3-directive-clickoutside\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/yjmbc.github.io\/",
@@ -78,10 +78,10 @@
 }
 </script>
 
-<meta property="og:title" content="编译和反编译" />
-<meta property="og:description" content="electron 项目的编译和反编译">
-<meta property="og:image" content="https://yjmbc.github.io/img/work/cat.jpg" />
-<meta property="og:url" content="https://yjmbc.github.io/work/asar/" />
+<meta property="og:title" content="vue3 自定义指令 点击空白处隐藏" />
+<meta property="og:description" content="vue3 自定义指令 点击空白处隐藏元素">
+<meta property="og:image" content="https://yjmbc.github.io/img/work/sea.jpg" />
+<meta property="og:url" content="https://yjmbc.github.io/work/vue3-directive-clickoutside/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YJMBC Blog" />
 <link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
@@ -301,7 +301,7 @@
 
               
               <h1 class="fw-semibold display-5 lh-1 mb-3"> 
-                编译和反编译
+                vue3 自定义指令 点击空白处隐藏
                 
               </h1>
               
@@ -333,7 +333,7 @@
         
         
           
-            <img src="/img/work/cat.jpg" alt="/img/work/cat.jpg" class="card-img-bottom rounded img-fluid lazyload">
+            <img src="/img/work/sea.jpg" alt="/img/work/sea.jpg" class="card-img-bottom rounded img-fluid lazyload">
           
         
 
@@ -344,13 +344,58 @@
 
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       <article role="main" class="blog-post">
-        <p>electron 项目安装之后，目录结构里有一个 resources 文件夹，文件夹里面有一个 app.asar 文件，这个文件相当于打包好了以后的 electron 项目的压缩文件。 <br>
-下载 <code>@electron/asar</code> 包之后，进入 resources 文件夹下 <br>
-<code>asar extract app.asar ./app</code> <br>
-这个命令会还原 项目打包之后的样子 <br>
-然后理论上修改这个压缩包里的内容，再通过编译会 app.asar 文件，就可以实现对项目的更改 <br>
-<code>asar pack ./app app.asar</code> <br>
-但是出于安全起见，打包的时候可以给文件加上签名，有了签名之后修改项目里的内容，都会导致签名失效。</p>
+        <p>注册：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// main.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">directives</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./util/directives&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createApp</span>(<span style="color:#a6e22e">App</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">router</span>).<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">store</span>).<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">directives</span>).<span style="color:#a6e22e">mount</span>(<span style="color:#e6db74">&#34;#app&#34;</span>);
+</span></span></code></pre></div><p>使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">v-clickOutSide</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  callback: () =&gt; (showModal = false),
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  except: [&#39;.showModalButton&#39;],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// derectives.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 自定义指令点击非自身事件（空白处）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 使用的时候需要传递 对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   callback: 点击的时候回调的函数,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   except: [&#39;&#39;,&#39;&#39;] 里面传递选择器，表示点击这里的时候不用理会
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clickOutSide</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">created</span>(<span style="color:#a6e22e">el</span>, <span style="color:#a6e22e">binding</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">documentHandler</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 如果点击的是元素自己或者在排除的元素里面则不触发回调函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>) <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">binding</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">except</span>.<span style="color:#a6e22e">some</span>(
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">item</span>) =&gt; document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">item</span>) <span style="color:#f92672">&amp;&amp;</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#a6e22e">item</span>).<span style="color:#a6e22e">contains</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">binding</span>.<span style="color:#a6e22e">value</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">binding</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">e</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">__vueClickOutside__</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">documentHandler</span>;
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">documentHandler</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unmounted</span>(<span style="color:#a6e22e">el</span>) {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">__vueClickOutside__</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">__vueClickOutside__</span>;
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">directives</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">install</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">app</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#34;clickOutSide&#34;</span>, <span style="color:#a6e22e">clickOutSide</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">directives</span>;
+</span></span></code></pre></div><p>这里 except 设立的原因主要是因为， 如果使用的场景是，用户点击一个按钮，然后出现一个弹窗，这个自定义指令绑定在弹窗元素上，第一次开启和关闭均正常。</p>
+<p>但是第二次点击按钮打开弹窗的时候，按钮上变量控制弹窗显示，显示之后自定义指令绑定监听器发生早于 click 事件触发，(简单来说就是按钮的 click 事件把弹窗点出来了，click 监听事件绑定完成了之后，click 事件触发了)，因此弹框又关闭了。</p>
+<p>所以这里需要一个变量表示点击到 except 里面的元素的时候，不做关闭的处理。至于点击按钮关闭弹窗的逻辑由按钮自己的点击事件来控制。</p>
 
       </article>
     </div>
@@ -365,9 +410,9 @@
       
       <div class="blog-tags">
         
-        <a href="https://yjmbc.github.io/tags/2024/">2024</a>
+        <a href="https://yjmbc.github.io/tags/vue3/">vue3</a>
         
-        <a href="https://yjmbc.github.io/tags/electron/">electron</a>
+        <a href="https://yjmbc.github.io/tags/2024/">2024</a>
         
       </div>
       
@@ -385,19 +430,13 @@
         
         <li class="list-group-item b-0 p-0">
 
-          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/work/drag/"
-            data-toggle="tooltip" data-placement="top" title="拖拽实现记录">&larr;
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/work/asar/"
+            data-toggle="tooltip" data-placement="top" title="编译和反编译">&larr;
             前一篇</a>
         </li>
         
 
 
-        
-        <li class="list-group-item ms-auto b-0 p-0">
-          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/work/vue3-directive-clickoutside/"
-            data-toggle="tooltip" data-placement="top" title="vue3 自定义指令 点击空白处隐藏">后一篇
-            &rarr;</a>
-        </li>
         
       </ul>
       
@@ -429,10 +468,10 @@
 
       
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="https://yjmbc.github.io/work/vue3-directive-clickoutside/">
+    <a href="https://yjmbc.github.io/work/asar/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
             <div class="card-body">
-                <h3 class="fw-bold post-title">vue3 自定义指令 点击空白处隐藏</h3>
+                <h3 class="fw-bold post-title">编译和反编译</h3>
                 
 
                 <p class="post-meta">
@@ -440,7 +479,7 @@
   
   
 
-  2024-09-06
+  2024-07-15
 
   
 
@@ -449,7 +488,7 @@
   
 
   
-  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;118&nbsp;个字
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;27&nbsp;个字
   
 
   
@@ -460,7 +499,7 @@
 
                 <div class="post-entry">
                     
-                    vue3 自定义指令 点击空白处隐藏元素
+                    electron 项目的编译和反编译
 
                     
                 </div>
@@ -472,7 +511,7 @@
             </div>
 
             
-            <img src="/img/work/sea_hu5459c0360c2b0cb7a147d2df0eb350ca_2177355_500x0_resize_q75_box.jpg" alt="/img/work/sea.jpg"
+            <img src="/img/work/cat_hued8a66a53761b9993170c6295c0c0079_358294_500x0_resize_q75_box.jpg" alt="/img/work/cat.jpg"
                 class="card-img-bottom img-fluid lazyload">
             
 

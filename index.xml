@@ -6,8 +6,15 @@
     <description>Recent content on YJMBC Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yjmbc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vue3 自定义指令 点击空白处隐藏</title>
+      <link>https://yjmbc.github.io/work/vue3-directive-clickoutside/</link>
+      <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/work/vue3-directive-clickoutside/</guid>
+      <description>注册：&#xA;// main.js import directives from &amp;#34;./util/directives&amp;#34;; const app = createApp(App); app.use(router).use(store).use(directives).mount(&amp;#34;#app&amp;#34;); 使用：&#xA;&amp;lt;div v-clickOutSide=&amp;#34;{ callback: () =&amp;gt; (showModal = false), except: [&amp;#39;.showModalButton&amp;#39;], }&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 指令：&#xA;// derectives.js // 自定义指令点击非自身事件（空白处） // 使用的时候需要传递 对象 // { // callback: 点击的时候回调的函数, // except: [&amp;#39;&amp;#39;,&amp;#39;&amp;#39;] 里面传递选择器，表示点击这里的时候不用理会 // } const clickOutSide = { created(el, binding) { function documentHandler(e) { // 如果点击的是元素自己或者在排除的元素里面则不触发回调函数 if ( el.contains(e.target) || binding.value.except.some( (item) =&amp;gt; document.querySelector(item) &amp;amp;&amp;amp; document.querySelector(item).contains(e.target) ) ) return false; if (binding.</description>
+    </item>
     <item>
       <title>编译和反编译</title>
       <link>https://yjmbc.github.io/work/asar/</link>
