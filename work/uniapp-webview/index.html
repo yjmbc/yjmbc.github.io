@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>阻止用户debugger - YJMBC Blog</title>
-<meta name="description" content="如何阻止用户打开控制台">
+<title>uniapp app 端通过webview引入外部 js ， webview 与 app 通信 - YJMBC Blog</title>
+<meta name="description" content="uniapp app 端通过webview引入外部 js ， webview 与 app 通信">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/yjmbc.github.io\/collections\/debugger\/",
-          "name": "阻止用户debugger"
+          "@id": "https:\/\/yjmbc.github.io\/work\/uniapp-webview\/",
+          "name": "Uniapp app 端通过webview引入外部 js ， webview 与 app 通信"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : ""
   },
-  "headline": "阻止用户debugger",
-  "description" : "如何阻止用户打开控制台",
+  "headline": "uniapp app 端通过webview引入外部 js ， webview 与 app 通信",
+  "description" : "uniapp app 端通过webview引入外部 js ， webview 与 app 通信",
   "inLanguage" : "zh-cn",
-  "wordCount":  12 ,
-  "datePublished" : "2024-07-15T00:00:00",
-  "dateModified" : "2024-07-15T00:00:00",
+  "wordCount":  206 ,
+  "datePublished" : "2024-09-25T00:00:00",
+  "dateModified" : "2024-09-25T00:00:00",
   "image" : "https:\/\/yjmbc.github.io\/",
-  "keywords" : [ "学习杂记, 2023" ],
-  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/collections\/debugger\/",
+  "keywords" : [ "2023" ],
+  "mainEntityOfPage" : "https:\/\/yjmbc.github.io\/work\/uniapp-webview\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/yjmbc.github.io\/",
@@ -78,10 +78,10 @@
 }
 </script>
 
-<meta property="og:title" content="阻止用户debugger" />
-<meta property="og:description" content="如何阻止用户打开控制台">
-<meta property="og:image" content="https://yjmbc.github.io/img/collections/cat1.jpg" />
-<meta property="og:url" content="https://yjmbc.github.io/collections/debugger/" />
+<meta property="og:title" content="uniapp app 端通过webview引入外部 js ， webview 与 app 通信" />
+<meta property="og:description" content="uniapp app 端通过webview引入外部 js ， webview 与 app 通信">
+<meta property="og:image" content="https://yjmbc.github.io/img/work/bird.jpg" />
+<meta property="og:url" content="https://yjmbc.github.io/work/uniapp-webview/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YJMBC Blog" />
 <link rel="apple-touch-icon" sizes="180x180" href=" https://yjmbc.github.io/favicon/apple-touch-icon.png">
@@ -289,21 +289,19 @@
     <div class="container">
       <div class="row justify-content-center">
         
-        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-          
 
           
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             
 
-            <div class="collections-heading">
+            <div class="work-heading">
               
 
               
 
               
               <h1 class="fw-semibold display-5 lh-1 mb-3"> 
-                阻止用户debugger
+                uniapp app 端通过webview引入外部 js ， webview 与 app 通信
                 
               </h1>
               
@@ -320,8 +318,6 @@
         </div>
         
         
-      </div>
-      
     </div>
   </div>
 </header>
@@ -337,7 +333,7 @@
         
         
           
-            <img src="/img/collections/cat1.jpg" alt="/img/collections/cat1.jpg" class="card-img-bottom rounded img-fluid lazyload">
+            <img src="/img/work/bird.jpg" alt="/img/work/bird.jpg" class="card-img-bottom rounded img-fluid lazyload">
           
         
 
@@ -348,15 +344,53 @@
 
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       <article role="main" class="blog-post">
-        <p>ai出来的时候我打开了文心一言和星火的控制台，两者的处理方式也不太一样</p>
-<p>文心一言是循环无限debugger 但是这个只要禁止debugger就可以了</p>
-<p>星火处理的很好，一开始我以为他监控了窗口大小，可视区域一旦变小，说明有人打开了控制台，然后就跳转到白页，但是我把控制台放到打开的新窗口仍然会跳走。 <br>
-后来在网上找到了监控cpu使用量，一打开就会检测到变化，然后迅速跳到白页。</p>
-<p>为了防止这个变化不明显，星火用 console.table 方法在控制台打印了很多表格。</p>
-<p>但是这种监控的方式实际上是和刚打开的时候的处理效率进行对比，所以文章里面也提到了，如果用户打开着控制台进入，这个方法就会失效。</p>
-<p>有一个相关文章 <br>
-<a href="https://blog.guya.net/2014/06/20/how-to-know-when-chrome-console-is-open/">https://blog.guya.net/2014/06/20/how-to-know-when-chrome-console-is-open/</a> <br>
-<a href="https://blog.guya.net/chrome/dev_tools/">https://blog.guya.net/chrome/dev_tools/</a></p>
+        <h1 id="背景">背景</h1>
+<p>用户登录需要接入腾讯的无感验证，在 index.html 文件里引入 js 文件是不生效的。查看官网相关内容，app 引入只支持 webview 的形式，因为他的 js 文件里面会用到浏览器里的变量，因此就算下载到本地引入也无法使用。</p>
+<p>当前项目已经使用 uniapp 完成了 h5 的相关内容，包含登录页。所以 app 端只需要用 webview 引入 h5 页面。</p>
+<p>如果没有 h5 端，则需要在 放在特定目录下进行访问 <a href="https://uniapp.dcloud.net.cn/component/web-view.html#web-view">web-view | uni-app 官网 (dcloud.net.cn)</a></p>
+<p><img src="/images/uniapp-webview-0.png" alt="image.png"></p>
+<p>所以最终的方案就是，登录页组件判断当前环境如果是 app 则使用 webview 加载 h5 登录页地址，并且携带参数用于告知是从 app 页跳转过来。</p>
+<p>网页可以正常使用引入 js 文件，这里判断没有引入的话 创建一个 script 元素进行加载</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xxxxxxxxxx</span>;
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xxxxxxxxxxxxx</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>登录成功过后 webview 和 app 通信返回用户信息</p>
+<h1 id="主要问题">主要问题</h1>
+<h2 id="本地调试">本地调试</h2>
+<p>uniapp 修改 h5 代码之后我希望直接把 localhost:8080 的页面放到 webview 的 地址里进行调试，但是 app 的页面会报错显示无法访问。</p>
+<p>首先怀疑是 协议的原因，在打包过后，本地启了 nginx 服务，访问 https 仍然有问题。</p>
+<p>这个时候怀疑证书，但是上网找了一个 http 的网页，没有安全证书仍然可以访问。</p>
+<p>上网搜索发现可以通过 ip 直接访问，所以怀疑 127.0.0.1 这个 ip 有问题，导致无法访问，修改为 本机 ipv4 地址后访问正常了，这个时候可以同时调试了。</p>
+<p>Login.vue</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ifdef</span> <span style="color:#a6e22e">H5</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">登录页相关内容</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">endif</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ifdef</span> <span style="color:#a6e22e">APP</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">web-view</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ipv4地址:8080/#/login?from=app&#34;</span> <span style="color:#f92672">@message</span><span style="color:#e6db74">=&#34;handleMessage&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">web</span><span style="color:#f92672">-view</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">endif</span> <span style="color:#f92672">--&gt;</span>
+</span></span></code></pre></div><h2 id="webview-和-app-通信">webview 和 app 通信</h2>
+<p>首先要按照官网写的引入 uni.webview.js 文件来实现通信，这里下载了 1.5.6 的 js 文件，然后放在本地，在 main.js 文件里进行了导入 <a href="https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js">https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js</a></p>
+<ul>
+<li><!-- raw HTML omitted -->App 端使用 uni.web-view.js 的最低版为 <!-- raw HTML omitted --><a href="https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.4.js"><!-- raw HTML omitted -->uni.webview.1.5.4.js<!-- raw HTML omitted --></a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// main.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// #ifdef H5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">uni</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./utils/uni.webview.1.5.6&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// #endif
+</span></span></span></code></pre></div><p>踩坑点： 本来引入了 uni.webview.js 文件之后使用 uni.postMessage 方法就可以向 app 传递信息，官网也是这么写的，实际上在 uni.webview.postMessage</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>登录信息获取之后通过 webview 携带的参数判断是 app 跳转过来的，那么就向 app 发送用户信息。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">login</span>.<span style="color:#a6e22e">vue</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// #ifdef H5 if (this.$route.query?.from === &#39;app&#39;) { uni.webView.postMessage({ data: res.data })
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span>; } <span style="color:#75715e">// h5 正常处理逻辑 this.callBack(res.data) // #endif
+</span></span></span></code></pre></div><p>app 端接收信息 这里 handleMessage 写接收后的逻辑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">login</span>.<span style="color:#a6e22e">vue</span><span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">web-view</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ipv4地址:8080/#/login?from=app&#34;</span> <span style="color:#f92672">@message</span><span style="color:#e6db74">=&#34;handleMessage&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">&lt;/</span><span style="color:#a6e22e">web</span><span style="color:#f92672">-view</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">info</span>) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callBack</span>(<span style="color:#a6e22e">info</span>.<span style="color:#a6e22e">detail</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>]) } }
+</span></span></code></pre></div><p>这里要注意的是传递的时候的数据是以数组形式接收的。</p>
 
       </article>
     </div>
@@ -370,8 +404,6 @@
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
       
       <div class="blog-tags">
-        
-        <a href="https://yjmbc.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/">学习杂记</a>
         
         <a href="https://yjmbc.github.io/tags/2023/">2023</a>
         
@@ -388,6 +420,13 @@
     <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
       
       <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
+
+          <a type="button" class="btn btn-dark" role="button" href="https://yjmbc.github.io/work/vue3-directive-clickoutside/"
+            data-toggle="tooltip" data-placement="top" title="vue3 自定义指令 点击空白处隐藏">&larr;
+            前一篇</a>
+        </li>
         
 
 
@@ -422,10 +461,10 @@
 
       
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="https://yjmbc.github.io/work/uniapp-webview/">
+    <a href="https://yjmbc.github.io/collections/debugger/">
         <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
             <div class="card-body">
-                <h3 class="fw-bold post-title">uniapp app 端通过webview引入外部 js ， webview 与 app 通信</h3>
+                <h3 class="fw-bold post-title">阻止用户debugger</h3>
                 
 
                 <p class="post-meta">
@@ -433,7 +472,7 @@
   
   
 
-  2024-09-25
+  2024-07-15
 
   
 
@@ -442,7 +481,7 @@
   
 
   
-  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;206&nbsp;个字
+  &nbsp;|&nbsp;<i class="bi bi-book"></i>&nbsp;12&nbsp;个字
   
 
   
@@ -453,7 +492,7 @@
 
                 <div class="post-entry">
                     
-                    uniapp app 端通过webview引入外部 js ， webview 与 app 通信
+                    如何阻止用户打开控制台
 
                     
                 </div>
@@ -465,7 +504,7 @@
             </div>
 
             
-            <img src="/img/work/bird_hua68c1dd2524572bb27e66403597759f3_118666_500x0_resize_q75_box.jpg" alt="/img/work/bird.jpg"
+            <img src="/img/collections/cat1_hu6129f33885e3157ac7a271237159852d_371859_500x0_resize_q75_box.jpg" alt="/img/collections/cat1.jpg"
                 class="card-img-bottom img-fluid lazyload">
             
 
