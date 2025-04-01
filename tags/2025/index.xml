@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2025 on YJMBC Blog</title>
+    <link>https://yjmbc.github.io/tags/2025/</link>
+    <description>Recent content in 2025 on YJMBC Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 14 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yjmbc.github.io/tags/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>uniapp app 内点击返回 webview 退出前uni.showModal 弹框确认</title>
+      <link>https://yjmbc.github.io/work/uniapp-webview-back/</link>
+      <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://yjmbc.github.io/work/uniapp-webview-back/</guid>
+      <description>背景 uniapp 做 app , app /a/ 路径下页面显示当前组件在 h5上的页面，以 webview 的形式放在页面上&#xA;当 app 点击返回的时候没有触发 webview 的页面回退，导致 webview 页面的路由守卫没有触发，弹框确认的逻辑放在路由守卫里，并且由 uni.showModal 来实现，在 app 环境下无法自定义样式，只能由 webview 触发路由守卫来实现。&#xA;解决方案 app 内点击返回 webview 页面不回退 onReady 中获取 webview 实例并且判断当前页面是否可以回退&#xA;onBackPress 中针对是否可以回退做处理，可以回退直接回退，不可以回退做相关逻辑&#xA;参考文章： https://blog.15897.com/article/uniapp-webview-android-back&#xA;由于webview 页面栈只有当前页面一个，不可以回退，返回的时候不会触发路由守卫 在 onBackPress 中针对不可以回退的 webview 实例对象，利用 evalJS , 直接调起 uniapp 的 showModal 方法&#xA;相关代码 onReady() { // #ifdef APP var that = this var currentWebview = this.$scope .$getAppWebview() //此对象相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效 setTimeout(function() { that.wv = currentWebview.</description>
+    </item>
+  </channel>
+</rss>
